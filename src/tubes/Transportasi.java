@@ -1,5 +1,6 @@
 package tubes;
 public abstract class Transportasi {
+    xdfcf;
     public String id, no_pol;
     public double tarif;
     public int kapasitas;
