@@ -3,21 +3,22 @@ package Model;
 import java.util.List;
 
 public class Member extends User{
-    Lokasi[] lok = new Lokasi[10];
-    Transportasi[] trans = new Transportasi[10];
     public String alamat;
+    
+    public Member(String username, String password, String nama, String email, String no_hp) {
+        this.username = username;
+        this.password = password;
+        this.nama = nama;
+        this.email = email;
+        this.no_hp = no_hp;
+    }
     
     public void setAlamat(String alamat){
         this.alamat = alamat;
     }
     
-    public Lokasi getLokasi(int idx){
-        return lok[idx];
-    }
-    
-    public Transportasi getTransportasi(int idx){
-        return trans[idx];
-    }
+
+
     
     public boolean logIn(List<Member> member){
         for(Member a : member){
@@ -28,18 +29,5 @@ public class Member extends User{
         }
         return false;
     }
-    
-    public boolean createMember(List<Member> member){
-        boolean check = false;
-        Member a = new Member();
-        
-        for(Member b : member){
-            if(a.username.equals(super.username))
-                check = true;
-        }
-        if (!check){
-            return true;
-        }
-        return false;
-    }
+   
 }

@@ -3,8 +3,7 @@ package Model;
 import java.util.*;
 
 public abstract class User {
-    public String username, password, nama, email;
-    public int no_hp;
+    public String username, password, nama, email, no_hp;
     
 /*    public User(String u, String p, String n, String e, int h){
         username = u;
@@ -46,11 +45,11 @@ public abstract class User {
         return email;
     }
         
-    public void setHp(int h){
+    public void setHp(String h){
         no_hp = h;
     }
     
-    public int getHp(){
+    public String getHp(){
         return no_hp;
     }
 }

@@ -3,6 +3,15 @@ package Model;
 import java.util.List;
 
 public class Admin extends User {
+
+    public Admin(String username, String password, String nama, String email, String no_hp) {
+        this.username = username;
+        this.password = password;
+        this.nama = nama;
+        this.email = email;
+        this.no_hp = no_hp;
+    }
+    
     
     public void addLokasi(Lokasi l, List list){
         list.add(l);
@@ -20,27 +29,5 @@ public class Admin extends User {
         list.remove(t);
     }
     
-    public boolean createAdmin (List<Admin> admin){
-        boolean check = false;
-        Admin a = new Admin();
-        
-        for(Admin b : admin){
-            if(a.username.equals(super.username))
-                check = true;
-        }
-        if (!check){
-            return true;
-        }
-        return false;
-    }
     
-    public boolean logIn(List<Admin> admin){
-        for(Admin a : admin){
-            if(a.username.equals(super.username))
-                if(a.password.equals(super.password)){
-                    return true;
-                }
-        }
-        return false;
-    }
 }
