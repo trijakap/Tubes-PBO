@@ -1,23 +1,36 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Model;
-
-/**
- *
- * @author Tri Jaka
- */
-public class Lokasi {
-    public String nama;
-    public String alamat;
-    public String id;
-    public String deskripsi;
-    public Lokasi(String nama, String alamat, String id, String deskripsi){
-        this.nama = nama;
-        this.alamat = alamat;
-        this.id = id;
-        this.deskripsi = deskripsi;
+public abstract class Lokasi {
+    public String nama, alamat, id, deskripsi;
+    
+    public void setNama(String n){
+        nama = n;
     }
+
+    public String getNama(){
+        return nama;
+    }
+    
+    public void setAlamat(String a){
+        alamat = a;
+    }
+
+    public String getAlamat(){
+        return alamat;
+    }
+        
+    public void setId(String id){
+        this.id = id;
+    }
+
+    public String getId(){
+        return id;
+    }
+        
+    public void setDeskripsi(String d){
+        deskripsi = d;
+    }
+
+    public String getDeskripsi(){
+        return deskripsi;
+    }           
 }

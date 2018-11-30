@@ -1,57 +1,56 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Model;
 
-/**
- *
- * @author Tri Jaka
- */
-public class User {
-    private String username;
-    private String password;
-    private String nama;
-    private String email;
-    private int no_hp;
+import java.util.*;
+
+public abstract class User {
+    public String username, password, nama, email;
+    public int no_hp;
     
-    public User (String username, String password,
-                String nama, String email, int no_hp){
-        this.username = username;
-        this.password = password;
-        this.nama = nama;
-        this.email = email;
-        this.no_hp = no_hp;
+/*    public User(String u, String p, String n, String e, int h){
+        username = u;
+        password = p;
+        nama = n;
+        email = e;
+        no_hp = h;
     }
-    public void setUsername(String username){
-        this.username = username;
+*/    
+    public void setUser(String u){
+        username = u;
     }
-    public void setPassword(String password){
-        this.password = password;
-    }
-    public void setNama(String nama){
-        this.nama = nama;
-    }
-    public void setEmail(String email){
-        this.email = email;
-    }
-    public void setHp(int no_hp){
-        this.no_hp = no_hp;
-    }
+    
     public String getUser(){
         return username;
     }
+    
+    public void setPass(String p){
+        password = p;
+    }
+    
     public String getPass(){
         return password;
     }
-    public String getNama(){
+    
+    public void setName(String n){
+        nama = n;
+    }
+    
+    public String getName(){
         return nama;
     }
+        
+    public void setEmail(String e){
+        email = e;
+    }
+    
     public String getEmail(){
         return email;
     }
-    public int no_hp(){
+        
+    public void setHp(int h){
+        no_hp = h;
+    }
+    
+    public int getHp(){
         return no_hp;
     }
 }

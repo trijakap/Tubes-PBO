@@ -70,6 +70,7 @@ public class LoginFrame extends javax.swing.JFrame {
         jLabel1.setText("Doesn't have any account?");
 
         clikRegister.setBackground(new java.awt.Color(0, 102, 102));
+        clikRegister.setForeground(new java.awt.Color(153, 0, 0));
         clikRegister.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         clikRegister.setText("Click Here");
         clikRegister.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -94,10 +95,6 @@ public class LoginFrame extends javax.swing.JFrame {
                 .addGap(143, 143, 143)
                 .addComponent(judul, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(140, 140, 140))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(225, 225, 225)
-                .addComponent(loginUser)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(184, 184, 184)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -110,8 +107,13 @@ public class LoginFrame extends javax.swing.JFrame {
                 .addGap(179, 179, 179))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(loginAdmin)
-                .addGap(216, 216, 216))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(loginUser)
+                        .addGap(205, 205, 205))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(loginAdmin)
+                        .addGap(200, 200, 200))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,9 +134,9 @@ public class LoginFrame extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(clikRegister)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(loginAdmin)
-                .addContainerGap())
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

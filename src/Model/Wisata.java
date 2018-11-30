@@ -1,14 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Model;
-
-/**
- *
- * @author Tri Jaka
- */
-public class Wisata {
+public class Wisata extends Lokasi{
+    public double harga_tiket;
     
+    public void setHarga(double h){
+        harga_tiket = h;
+    }
+    
+    public double getHarga(){
+        return harga_tiket;
+    }
 }
