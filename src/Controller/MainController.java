@@ -49,7 +49,7 @@ public class MainController extends MouseAdapter implements ActionListener {
         String username = view.getUsername();
         String pass = view.getPassword();
         if(db.cekUserPassAdmin(username, pass)){
-            MemberController mc = new MemberController();
+            AdminController ac = new AdminController(db);
             view.dispose();
         }else {
             view.showMessage("Username / Password Salah", "Error", 0);

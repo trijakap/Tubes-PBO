@@ -225,7 +225,7 @@ public class Database {
     
     public void addNonWisata(NonWisata m) {
         connect();
-        String query = "INSERT INTO non-wisata VALUES (";
+        String query = "INSERT INTO `non-wisata` VALUES (";
         query += "'" + m.getId() + "',";
         query += "'" + m.getNama() + "',";
         query += "'" + m.getAlamat() + "',";
@@ -243,7 +243,10 @@ public class Database {
         query += "'" + m.getKapasitas() + "',";
         query += "'" + m.getKode() + "'";
         query += ")";
-        if (manipulate(query)) angkot.add(m);
+        if (manipulate(query)) {
+            angkot.add(m);
+            kodeAngkot++;
+        }
         disconnect();
     }
     
@@ -395,7 +398,7 @@ public class Database {
     
     public void delNonWisata(String id) {
         connect();
-        String query = "DELETE FROM non-wisata WHERE id='" + id + "'";
+        String query = "DELETE FROM `non-wisata` WHERE id='" + id + "'";
         if (manipulate(query)){
             for (NonWisata m : nonWisata) {
                 if (m.getId().equals(id)){
