@@ -121,7 +121,7 @@ public class Database {
     public void loadNonWisata() {
         connect();
         try {
-            String query = "SELECT * FROM nonWisata";
+            String query = "SELECT * FROM `non-wisata`";
             rs = stmt.executeQuery(query);
             while (rs.next()){
                 nonWisata.add(new NonWisata(rs.getString("id"), rs.getString("nama"), rs.getString("alamat"), rs.getString("deskripsi")));
@@ -191,7 +191,7 @@ public class Database {
         query += "'" + m.getUser() + "',";
         query += "'" + m.getPass() + "',";
         query += "'" + m.getName() + "',";
-        query += "'" + m.getEmail() + "'";
+        query += "'" + m.getEmail() + "',";
         query += "'" + m.getHp()+ "'";
         query += ")";
         if (manipulate(query)) admin.add(m);
@@ -204,7 +204,7 @@ public class Database {
         query += "'" + m.getUser() + "',";
         query += "'" + m.getPass() + "',";
         query += "'" + m.getName() + "',";
-        query += "'" + m.getEmail() + "'";
+        query += "'" + m.getEmail() + "',";
         query += "'" + m.getHp()+ "'";
         query += ")";
         if (manipulate(query)) member.add(m);
@@ -216,7 +216,7 @@ public class Database {
         query += "'" + m.getId() + "',";
         query += "'" + m.getNama() + "',";
         query += "'" + m.getAlamat() + "',";
-        query += "'" + m.getDeskripsi() + "'";
+        query += "'" + m.getDeskripsi() + "',";
         query += "'" + m.getHarga()+ "'";
         query += ")";
         if (manipulate(query)) wisata.add(m);
@@ -270,12 +270,38 @@ public class Database {
         return cek;
     }
     
+    public boolean cekUserPassAdmin(String username, String pass){
+        boolean cek = false;
+        for (Admin a : admin){
+            if(a.getUser().equals(username)){
+                if(a.getPass().equals(pass)){
+                    cek = true;
+                    break;
+                }
+            }
+        }
+        return cek;
+    }
+    
     public boolean cekDuplikatUsernameMember (String username){
         boolean cek = false;
         for (Member a : member) {
             if (a.getUser().equals(username)){
                 cek = true;
                 break;
+            }
+        }
+        return cek;
+    }
+    
+    public boolean cekUserPassMember(String username, String pass){
+        boolean cek = false;
+        for (Member a : member){
+            if(a.getUser().equals(username)){
+                if(a.getPass().equals(pass)){
+                    cek = true;
+                    break;
+                }
             }
         }
         return cek;

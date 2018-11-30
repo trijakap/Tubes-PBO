@@ -12,6 +12,8 @@ public class Member extends User{
         this.email = email;
         this.no_hp = no_hp;
     }
+
+
     
     public void setAlamat(String alamat){
         this.alamat = alamat;

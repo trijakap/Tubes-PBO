@@ -9,6 +9,6 @@ package Controller;
  *
  * @author Tri Jaka
  */
-public class RegisterController {
+public class MemberController {
     
 }
