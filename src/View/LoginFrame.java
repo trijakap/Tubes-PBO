@@ -5,6 +5,15 @@
  */
 package View;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 /**
  *
  * @author trijakapam
@@ -16,6 +25,7 @@ public class LoginFrame extends javax.swing.JFrame {
      */
     public LoginFrame() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -27,32 +37,149 @@ public class LoginFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        loginPanel1 = new View.LoginPanel();
+        jPanel2 = new javax.swing.JPanel();
+        judul = new javax.swing.JLabel();
+        Password = new javax.swing.JPasswordField();
+        username = new javax.swing.JTextField();
+        usrLab = new javax.swing.JLabel();
+        passLab = new javax.swing.JLabel();
+        loginUser = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        clikRegister = new javax.swing.JLabel();
+        loginAdmin = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        judul.setFont(new java.awt.Font("Gargi-1.2b", 0, 24)); // NOI18N
+        judul.setText("Bandung Tour Guide");
+
+        usrLab.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        usrLab.setText("Username :");
+
+        passLab.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        passLab.setText("Password:");
+
+        loginUser.setText("Login as User");
+        loginUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginUserActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Doesn't have any account?");
+
+        clikRegister.setBackground(new java.awt.Color(0, 102, 102));
+        clikRegister.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        clikRegister.setText("Click Here");
+        clikRegister.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        clikRegister.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clikRegisterMouseClicked(evt);
+            }
+        });
+
+        loginAdmin.setText("Login as Admin");
+        loginAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginAdminActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(143, 143, 143)
+                .addComponent(judul, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(140, 140, 140))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(225, 225, 225)
+                .addComponent(loginUser)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(184, 184, 184)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(clikRegister, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(usrLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(username, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Password, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(passLab, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(179, 179, 179))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(loginAdmin)
+                .addGap(216, 216, 216))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(judul)
+                .addGap(12, 12, 12)
+                .addComponent(usrLab)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(passLab)
+                .addGap(4, 4, 4)
+                .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(loginUser, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(clikRegister)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(loginAdmin)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(loginPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(64, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(loginPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(51, 51, 51)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
+    private void loginUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginUserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loginUserActionPerformed
+
+    private void clikRegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clikRegisterMouseClicked
+        // TODO add your handling code here:
+        RegisterFrame rgFrame = new RegisterFrame();
+        rgFrame.setVisible(true);
+        rgFrame.pack();
+        rgFrame.setLocationRelativeTo(null);
+        rgFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.dispose();
+    }//GEN-LAST:event_clikRegisterMouseClicked
+
+    private void loginAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginAdminActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_loginAdminActionPerformed
+    
+    public void showMessage(String message, String title, int type){
+        JOptionPane.showMessageDialog(null, message, title, type);
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -86,8 +213,103 @@ public class LoginFrame extends javax.swing.JFrame {
         });
     }
 
+    public JPasswordField getPassword() {
+        return Password;
+    }
+
+    public void setPassword(JPasswordField Password) {
+        this.Password = Password;
+    }
+
+    public JLabel getClikRegister() {
+        return clikRegister;
+    }
+
+    public void setClikRegister(JLabel clikRegister) {
+        this.clikRegister = clikRegister;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    public void setjPanel2(JPanel jPanel2) {
+        this.jPanel2 = jPanel2;
+    }
+
+    public JLabel getJudul() {
+        return judul;
+    }
+
+    public void setJudul(JLabel judul) {
+        this.judul = judul;
+    }
+
+    public JButton getLoginAdmin() {
+        return loginAdmin;
+    }
+
+    public void setLoginAdmin(JButton loginAdmin) {
+        this.loginAdmin = loginAdmin;
+    }
+
+    public JButton getLoginUser() {
+        return loginUser;
+    }
+
+    public void setLoginUser(JButton loginUser) {
+        this.loginUser = loginUser;
+    }
+
+    public JLabel getPassLab() {
+        return passLab;
+    }
+
+    public void setPassLab(JLabel passLab) {
+        this.passLab = passLab;
+    }
+
+    public JTextField getUsername() {
+        return username;
+    }
+
+    public void setUsername(JTextField username) {
+        this.username = username;
+    }
+
+    public JLabel getUsrLab() {
+        return usrLab;
+    }
+
+    public void setUsrLab(JLabel usrLab) {
+        this.usrLab = usrLab;
+    }
+    
+    
+    public void addActionListener(ActionListener x){
+        loginAdmin.addActionListener(x);
+        loginUser.addActionListener(x);
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private View.LoginPanel loginPanel1;
+    private javax.swing.JPasswordField Password;
+    private javax.swing.JLabel clikRegister;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel judul;
+    private javax.swing.JButton loginAdmin;
+    private javax.swing.JButton loginUser;
+    private javax.swing.JLabel passLab;
+    private javax.swing.JTextField username;
+    private javax.swing.JLabel usrLab;
     // End of variables declaration//GEN-END:variables
 
 }

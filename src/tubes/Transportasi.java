@@ -1,6 +1,5 @@
 package tubes;
 public abstract class Transportasi {
-    xdfcf;
     public String id, no_pol;
     public double tarif;
     public int kapasitas;
@@ -12,14 +11,7 @@ public abstract class Transportasi {
     public String getId(){
         return id;
     }
-    
-    public void setNopol(String no){
-        no_pol = no;
-    }
 
-    public String getNopol(){
-        return no_pol;
-    }
         
     public void setTarif(double t){
         tarif = t;
@@ -27,6 +19,14 @@ public abstract class Transportasi {
 
     public double getTarif(){
         return tarif;
+    }
+
+    public String getNo_pol() {
+        return no_pol;
+    }
+
+    public void setNo_pol(String no_pol) {
+        this.no_pol = no_pol;
     }
         
     public void setKapasitas(int k){
