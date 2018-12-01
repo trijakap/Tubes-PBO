@@ -6,4 +6,8 @@ public class NonWisata extends Lokasi{
         this.alamat = alamat;
         this.deskripsi = deskripsi;
     }
+    
+    public NonWisata (String id){
+        this.id = id;
+    }
 }

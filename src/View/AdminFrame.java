@@ -102,8 +102,8 @@ public class AdminFrame extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         fieldPassAdmin = new javax.swing.JPasswordField();
-        tambahAdminBtn = new javax.swing.JButton();
-        hapusAdminBtn = new javax.swing.JButton();
+        btnTambahAdmin = new javax.swing.JButton();
+        btnHapusAdmin = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         jScrollPane10 = new javax.swing.JScrollPane();
         tbAdmin = new javax.swing.JTable();
@@ -115,7 +115,7 @@ public class AdminFrame extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         userPanel = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
-        hapusUserBtn = new javax.swing.JButton();
+        btnHapusUser = new javax.swing.JButton();
         jScrollPane9 = new javax.swing.JScrollPane();
         tbUser = new javax.swing.JTable();
         jLabel16 = new javax.swing.JLabel();
@@ -466,11 +466,6 @@ public class AdminFrame extends javax.swing.JFrame {
         jLabel12.setText("Pilih Angkot:");
 
         btnHapusBus.setText("Hapus");
-        btnHapusBus.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnHapusBusActionPerformed(evt);
-            }
-        });
 
         tbBus.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -501,11 +496,6 @@ public class AdminFrame extends javax.swing.JFrame {
         jLabel20.setText("Pilih Bus:");
 
         btnHapusAngkot.setText("Hapus");
-        btnHapusAngkot.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnHapusAngkotActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout hapusTransPanelLayout = new javax.swing.GroupLayout(hapusTransPanel);
         hapusTransPanel.setLayout(hapusTransPanelLayout);
@@ -571,9 +561,9 @@ public class AdminFrame extends javax.swing.JFrame {
 
         fieldPassAdmin.setText("password");
 
-        tambahAdminBtn.setText("Tambah");
+        btnTambahAdmin.setText("Tambah");
 
-        hapusAdminBtn.setText("Hapus");
+        btnHapusAdmin.setText("Hapus");
 
         jLabel14.setText("Hapus Admin");
 
@@ -624,7 +614,7 @@ public class AdminFrame extends javax.swing.JFrame {
                     .addGroup(adminPanelLayout.createSequentialGroup()
                         .addGroup(adminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(adminPanelLayout.createSequentialGroup()
-                                .addComponent(tambahAdminBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnTambahAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(89, 89, 89))
                             .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, adminPanelLayout.createSequentialGroup()
@@ -639,12 +629,9 @@ public class AdminFrame extends javax.swing.JFrame {
                                     .addComponent(fieldNamaAdmin)
                                     .addComponent(fieldEmailAdmin)
                                     .addComponent(fieldNoHPAdmin)
-                                    .addGroup(adminPanelLayout.createSequentialGroup()
-                                        .addGroup(adminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel21)
-                                            .addComponent(jLabel22)
-                                            .addComponent(jLabel23))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                    .addComponent(jLabel21)
+                                    .addComponent(jLabel22)
+                                    .addComponent(jLabel23))))
                         .addGroup(adminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(adminPanelLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
@@ -655,7 +642,7 @@ public class AdminFrame extends javax.swing.JFrame {
                                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminPanelLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(hapusAdminBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnHapusAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         adminPanelLayout.setVerticalGroup(
@@ -695,10 +682,10 @@ public class AdminFrame extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(fieldNoHPAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)))
-                        .addComponent(tambahAdminBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnTambahAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 12, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
-                .addComponent(hapusAdminBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnHapusAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -706,7 +693,7 @@ public class AdminFrame extends javax.swing.JFrame {
 
         jLabel15.setText("List user:");
 
-        hapusUserBtn.setText("Hapus");
+        btnHapusUser.setText("Hapus");
 
         tbUser.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -730,7 +717,7 @@ public class AdminFrame extends javax.swing.JFrame {
                 .addGroup(userPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel15)
                     .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(hapusUserBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnHapusUser, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(286, Short.MAX_VALUE))
         );
         userPanelLayout.setVerticalGroup(
@@ -741,7 +728,7 @@ public class AdminFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(hapusUserBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnHapusUser, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51))
         );
 
@@ -783,10 +770,6 @@ public class AdminFrame extends javax.swing.JFrame {
     private void fieldNamaTransActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldNamaTransActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fieldNamaTransActionPerformed
-
-    private void btnHapusBusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusBusActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnHapusBusActionPerformed
 
     private void rBtnTransAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rBtnTransAActionPerformed
         // TODO add your handling code here:
@@ -835,10 +818,6 @@ public class AdminFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tarifLokActionPerformed
 
-    private void btnHapusAngkotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusAngkotActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnHapusAngkotActionPerformed
-
     private void fieldNamaAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldNamaAdminActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fieldNamaAdminActionPerformed
@@ -850,50 +829,17 @@ public class AdminFrame extends javax.swing.JFrame {
     private void fieldNoHPAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldNoHPAdminActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fieldNoHPAdminActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdminFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdminFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdminFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AdminFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AdminFrame().setVisible(true);
-            }
-        });
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel adminPanel;
+    private javax.swing.JButton btnHapusAdmin;
     private javax.swing.JButton btnHapusAngkot;
     private javax.swing.JButton btnHapusBus;
     private javax.swing.JButton btnHapusNonWisata;
+    private javax.swing.JButton btnHapusUser;
     private javax.swing.JButton btnHapusWisata;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JButton btnSubmitTrans;
+    private javax.swing.JButton btnTambahAdmin;
     private javax.swing.ButtonGroup butGroupJenis;
     private javax.swing.JTextPane descPane;
     private javax.swing.JTextField fieldEmailAdmin;
@@ -905,10 +851,8 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JPasswordField fieldPassAdmin;
     private javax.swing.JTextField fieldTarifTrans;
     private javax.swing.JTextField fieldUnameAdmin;
-    private javax.swing.JButton hapusAdminBtn;
     private javax.swing.JPanel hapusLokPanel;
     private javax.swing.JPanel hapusTransPanel;
-    private javax.swing.JButton hapusUserBtn;
     private javax.swing.JTextField idField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -949,7 +893,6 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> pilihLokBox;
     private javax.swing.JRadioButton rBtnTransA;
     private javax.swing.JRadioButton rBtnTransB;
-    private javax.swing.JButton tambahAdminBtn;
     private javax.swing.JPanel tambahLokPanel;
     private javax.swing.JPanel tambahTransPanel;
     private javax.swing.JTextField tarifLok;
@@ -1055,16 +998,28 @@ public class AdminFrame extends javax.swing.JFrame {
         this.tarifLok = tarifLok;
     }
 
+    public JTable getTbWisata() {
+        return tbWisata;
+    }
+    
     public void setTbWisata(DefaultTableModel x) {
         this.tbWisata.setModel(x);
+    }
+    
+    public int getSelectedWisata(){
+        return tbWisata.getSelectedRow();
     }
 
     public JTable getTbNonWisata() {
         return tbNonWisata;
     }
-
+    
     public void setTbNonWisata(DefaultTableModel x) {
         this.tbNonWisata.setModel(x);
+    }
+    
+    public int getSelectedNonWisata(){
+        return tbNonWisata.getSelectedRow();
     }
 
     public JButton getBtnSubmitTrans() {
@@ -1133,18 +1088,13 @@ public class AdminFrame extends javax.swing.JFrame {
     
     
     public JButton getHapusAdminBtn() {
-        return hapusAdminBtn;
+        return btnHapusAdmin;
     }
 
     public void setHapusAdminBtn(JButton hapusAdminBtn) {
-        this.hapusAdminBtn = hapusAdminBtn;
+        this.btnHapusAdmin = hapusAdminBtn;
     }
     
-    public void addActionListener(ActionListener x){
-        btnSubmit.addActionListener(x);
-        btnHapusNonWisata.addActionListener(x);
-        btnSubmitTrans.addActionListener(x);
-    }   
 
     public JTable getTbAngkot() {
         return tbAngkot;
@@ -1153,6 +1103,10 @@ public class AdminFrame extends javax.swing.JFrame {
     public void setTbAngkot(DefaultTableModel x) {
         this.tbAngkot.setModel(x);
     }
+    
+    public int getSelectedAngkot() {
+        return tbAngkot.getSelectedRow();
+    }
 
     public JTable getTbBus() {
         return tbBus;
@@ -1160,6 +1114,10 @@ public class AdminFrame extends javax.swing.JFrame {
 
     public void setTbBus(DefaultTableModel x) {
         this.tbBus.setModel(x);
+    }
+    
+    public int getSelectedBus(){
+        return tbBus.getSelectedRow();
     }
 
     public String getFieldPassAdmin() {
@@ -1179,11 +1137,11 @@ public class AdminFrame extends javax.swing.JFrame {
     }
 
     public JButton getTambahAdminBtn() {
-        return tambahAdminBtn;
+        return btnTambahAdmin;
     }
 
     public void setTambahAdminBtn(JButton tambahAdminBtn) {
-        this.tambahAdminBtn = tambahAdminBtn;
+        this.btnTambahAdmin = tambahAdminBtn;
     }
 
     public String getFieldEmailAdmin() {
@@ -1217,6 +1175,10 @@ public class AdminFrame extends javax.swing.JFrame {
     public void setTbAdmin(DefaultTableModel x) {
         this.tbAdmin.setModel(x);
     }
+    
+    public int getSelectedAdmin(){
+        return tbAdmin.getSelectedRow();
+    }
 
     public JTable getTbUser() {
         return tbUser;
@@ -1226,7 +1188,82 @@ public class AdminFrame extends javax.swing.JFrame {
         this.tbUser.setModel(x);
     }
     
+    public int getSelectedUser(){
+        return tbUser.getSelectedRow();
+    }
+
+    public JButton getBtnHapusAdmin() {
+        return btnHapusAdmin;
+    }
+
+    public void setBtnHapusAdmin(JButton btnHapusAdmin) {
+        this.btnHapusAdmin = btnHapusAdmin;
+    }
+
+    public JButton getBtnHapusAngkot() {
+        return btnHapusAngkot;
+    }
+
+    public void setBtnHapusAngkot(JButton btnHapusAngkot) {
+        this.btnHapusAngkot = btnHapusAngkot;
+    }
+
+    public JButton getBtnHapusBus() {
+        return btnHapusBus;
+    }
+
+    public void setBtnHapusBus(JButton btnHapusBus) {
+        this.btnHapusBus = btnHapusBus;
+    }
+
+    public JButton getBtnHapusNonWisata() {
+        return btnHapusNonWisata;
+    }
+
+    public void setBtnHapusNonWisata(JButton btnHapusNonWisata) {
+        this.btnHapusNonWisata = btnHapusNonWisata;
+    }
+
+    public JButton getBtnHapusUser() {
+        return btnHapusUser;
+    }
+
+    public void setBtnHapusUser(JButton btnHapusUser) {
+        this.btnHapusUser = btnHapusUser;
+    }
+
+    public JButton getBtnHapusWisata() {
+        return btnHapusWisata;
+    }
+
+    public void setBtnHapusWisata(JButton btnHapusWisata) {
+        this.btnHapusWisata = btnHapusWisata;
+    }
     
-   
+    
+    
+    public void addActionListener(ActionListener x){
+        btnSubmit.addActionListener(x);
+        btnSubmitTrans.addActionListener(x);
+        btnTambahAdmin.addActionListener(x);
+        btnHapusNonWisata.addActionListener(x);
+        btnHapusWisata.addActionListener(x);
+        btnHapusAdmin.addActionListener(x);
+        btnHapusUser.addActionListener(x);
+        btnHapusAngkot.addActionListener(x);
+        btnHapusBus.addActionListener(x);
+    }   
+    
+    public void addMouseAdaoter(MouseAdapter x){
+        tbWisata.addMouseListener(x);
+        tbNonWisata.addMouseListener(x);
+        tbAdmin.addMouseListener(x);
+        tbUser.addMouseListener(x);
+        tbAngkot.addMouseListener(x);
+        tbBus.addMouseListener(x);
+    }
+    
+    
+    
 }
 

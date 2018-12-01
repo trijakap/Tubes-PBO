@@ -10,6 +10,10 @@ public class Angkot extends Transportasi {
         this.kode = kode;
     }
     
+    public Angkot(String no_pol){
+        this.no_pol = no_pol;
+    }
+    
     public void setKode(int k){
         kode = k;
     }

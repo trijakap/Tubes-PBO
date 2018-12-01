@@ -138,7 +138,7 @@ public class Database {
             String query = "SELECT * FROM angkot";
             rs = stmt.executeQuery(query);
             while (rs.next()){
-                angkot.add(new Angkot(rs.getString("no_pol"), rs.getDouble("tarf"), rs.getInt("kapasitas"), rs.getInt("kode")));
+                angkot.add(new Angkot(rs.getString("no_pol"), rs.getDouble("tarif"), rs.getInt("kapasitas"), rs.getInt("kode")));
                 kodeAngkot++;
             }
         } catch (SQLException ex) {
@@ -417,6 +417,7 @@ public class Database {
             for (Angkot m : angkot) {
                 if (m.getNopol().equals(no_pol)){
                     angkot.remove(m);
+                    kodeAngkot--;
                     break;
                 }
             }

@@ -13,7 +13,9 @@ public class Member extends User{
         this.no_hp = no_hp;
     }
 
-
+    public Member(String username){
+        this.username = username;
+    }
     
     public void setAlamat(String alamat){
         this.alamat = alamat;

@@ -687,9 +687,6 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Hapus"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnHapusBusActionPerformed"/>
-                  </Events>
                 </Component>
                 <Container class="javax.swing.JScrollPane" name="jScrollPane1">
                   <AuxValues>
@@ -742,9 +739,6 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Hapus"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnHapusAngkotActionPerformed"/>
-                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -777,7 +771,7 @@
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Group type="102" attributes="0">
-                                          <Component id="tambahAdminBtn" min="-2" pref="175" max="-2" attributes="0"/>
+                                          <Component id="btnTambahAdmin" min="-2" pref="175" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -795,14 +789,9 @@
                                               <Component id="fieldNamaAdmin" max="32767" attributes="0"/>
                                               <Component id="fieldEmailAdmin" max="32767" attributes="0"/>
                                               <Component id="fieldNoHPAdmin" alignment="0" max="32767" attributes="0"/>
-                                              <Group type="102" attributes="0">
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace max="32767" attributes="0"/>
-                                              </Group>
+                                              <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -820,7 +809,7 @@
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="hapusAdminBtn" min="-2" pref="255" max="-2" attributes="0"/>
+                                  <Component id="btnHapusAdmin" min="-2" pref="255" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -870,12 +859,12 @@
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Component id="tambahAdminBtn" min="-2" pref="48" max="-2" attributes="0"/>
+                                  <Component id="btnTambahAdmin" min="-2" pref="48" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="hapusAdminBtn" min="-2" pref="48" max="-2" attributes="0"/>
+                          <Component id="btnHapusAdmin" min="-2" pref="48" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -910,12 +899,12 @@
                     <Property name="text" type="java.lang.String" value="password"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="tambahAdminBtn">
+                <Component class="javax.swing.JButton" name="btnTambahAdmin">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Tambah"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="hapusAdminBtn">
+                <Component class="javax.swing.JButton" name="btnHapusAdmin">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Hapus"/>
                   </Properties>
@@ -995,7 +984,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                               <Component id="jScrollPane9" alignment="0" min="-2" pref="350" max="-2" attributes="0"/>
-                              <Component id="hapusUserBtn" alignment="0" min="-2" pref="172" max="-2" attributes="0"/>
+                              <Component id="btnHapusUser" alignment="0" min="-2" pref="172" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="286" max="32767" attributes="0"/>
                       </Group>
@@ -1009,7 +998,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane9" pref="185" max="32767" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="hapusUserBtn" min="-2" pref="53" max="-2" attributes="0"/>
+                          <Component id="btnHapusUser" min="-2" pref="53" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -1021,7 +1010,7 @@
                     <Property name="text" type="java.lang.String" value="List user:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="hapusUserBtn">
+                <Component class="javax.swing.JButton" name="btnHapusUser">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Hapus"/>
                   </Properties>

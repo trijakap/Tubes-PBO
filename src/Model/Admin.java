@@ -12,6 +12,9 @@ public class Admin extends User {
         this.no_hp = no_hp;
     }
     
+    public Admin(String username){
+        this.username = username;
+    }
     
     public void addLokasi(Lokasi l, List list){
         list.add(l);

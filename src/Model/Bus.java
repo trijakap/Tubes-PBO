@@ -10,6 +10,10 @@ public class Bus extends Transportasi{
         
     }
     
+    public Bus (String no_pol){
+        this.no_pol = no_pol;
+    }
+    
     public void setNama(String n){
         nama = n;
     }

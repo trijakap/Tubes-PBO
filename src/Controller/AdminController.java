@@ -7,9 +7,7 @@ package Controller;
 
 import Model.*;
 import View.AdminFrame;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
+import java.awt.event.*;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
@@ -25,6 +23,7 @@ public class AdminController extends MouseAdapter implements ActionListener {
         this.db = db;
         view = new AdminFrame();
         view.addActionListener(this);
+        view.addMouseAdaoter(this);
         view.setVisible(true);
         view.setLocationRelativeTo(null);
         loadTabelWisata();
@@ -100,6 +99,41 @@ public class AdminController extends MouseAdapter implements ActionListener {
         }
     }
     
+    public void btnHapusAdminActionPerformed(){
+        db.delAdmin(adm.getUser());
+        loadTabelAdmin();
+        view.showMessage("Data Berhasil Dihapus", "Success", 1);
+    }
+    
+    public void btnHapusUserActionPerformed(){
+        db.delMember(mem.getUser());
+        loadTabelMember();
+        view.showMessage("Data Berhasil Dihapus", "Success", 1);
+    }
+    public void btnHapusWisataActionPerformed(){
+        db.delWisata(wis.getId());
+        loadTabelWisata();
+        view.showMessage("Data Berhasil Dihapus", "Success", 1);
+    }
+    
+    public void btnHapusNonWisataActionPerformed(){
+        db.delNonWisata(nowis.getId());
+        loadTabelNonWisata();
+        view.showMessage("Data Berhasil Dihapus", "Success", 1);
+    }
+    
+    public void btnHapusAngkotActionPerformed(){
+        db.delAngkot(ang.getNopol());
+        loadTabelAngkot();
+        view.showMessage("Data Berhasil Dihapus", "Success", 1);
+    }
+    
+    public void btnHapusBusActionPerformed(){
+        db.delBus(bu.getNopol());
+        loadTabelBus();
+        view.showMessage("Data Berhasil Dihapus", "Success", 1);
+    }
+    
     public void loadTabelWisata(){
         DefaultTableModel model = new DefaultTableModel(new String[]{"Id","Nama","Lokasi","Harga"},0);
         ArrayList<Wisata> wisata = db.getWisata();
@@ -159,11 +193,53 @@ public class AdminController extends MouseAdapter implements ActionListener {
         Object source = e.getSource();
         if (source.equals(view.getBtnSubmit())){
             btnSubmitActionPerformed();
-        } else if (source.equals(view.getHapusLokBtn())){
         } else if (source.equals(view.getBtnSubmitTrans())){
             btnSumbitTransActionPerformed();
         } else if (source.equals(view.getTambahAdminBtn())){
             btnTambahAdminActionPerformed();
+        } else if (source.equals(view.getBtnHapusAdmin())){
+            btnHapusAdminActionPerformed();
+        } else if (source.equals(view.getBtnHapusUser())){
+            btnHapusUserActionPerformed();
+        } else if (source.equals(view.getBtnHapusWisata())){
+            btnHapusWisataActionPerformed();
+        } else if (source.equals(view.getBtnHapusNonWisata())){
+            btnHapusNonWisataActionPerformed();
+        } else if (source.equals(view.getBtnHapusAngkot())){
+            btnHapusAngkotActionPerformed();
+        } else if (source.equals(view.getBtnHapusBus())){
+            btnHapusBusActionPerformed();
+        }
+    }
+    
+    private Admin adm;
+    private Member mem;
+    private Wisata wis;
+    private NonWisata nowis;
+    private Angkot ang;
+    private Bus bu;
+    
+    @Override
+    public void mousePressed(MouseEvent me){
+        Object source = me.getSource();
+        if(source.equals(view.getTbAdmin())){
+            int i = view.getSelectedAdmin();
+            adm = new Admin( view.getTbAdmin().getModel().getValueAt(i, 0).toString());
+        } else if(source.equals(view.getTbUser())){
+            int i = view.getSelectedUser();
+            mem = new Member (view.getTbUser().getModel().getValueAt(i, 0).toString());
+        } else if  (source.equals(view.getTbWisata())){
+            int i = view.getSelectedWisata();
+            wis = new Wisata(view.getTbWisata().getModel().getValueAt(i, 0).toString());
+        } else if (source.equals(view.getTbNonWisata())){
+            int i = view.getSelectedNonWisata();
+            nowis = new NonWisata(view.getTbNonWisata().getModel().getValueAt(i, 0).toString());
+        } else if (source.equals(view.getTbAngkot())){
+            int i = view.getSelectedAngkot();
+            ang = new Angkot(view.getTbAngkot().getModel().getValueAt(i, 0).toString());
+        } else if (source.equals(view.getTbBus())){
+            int i = view.getSelectedBus();
+            bu = new Bus(view.getTbBus().getModel().getValueAt(i, 0).toString());
         }
     }
 }

@@ -11,6 +11,10 @@ public class Wisata extends Lokasi{
         this.deskripsi = deskripsi;
         this.harga_tiket = harga_tiket;
     }
+    
+    public Wisata (String id){
+        this.id = id;
+    }
     public void setHarga(double h){
         harga_tiket = h;
     }
