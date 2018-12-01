@@ -23,7 +23,7 @@ public class AdminController extends MouseAdapter implements ActionListener {
         this.db = db;
         view = new AdminFrame();
         view.addActionListener(this);
-        view.addMouseAdaoter(this);
+        view.addMouseAdapter(this);
         view.setVisible(true);
         view.setLocationRelativeTo(null);
         loadTabelWisata();
@@ -40,14 +40,23 @@ public class AdminController extends MouseAdapter implements ActionListener {
         String lokasi = view.getPilihLokBox();
         String deskripsi = view.getDescPane();
         if (view.getLokasi() == "wisata"){
-            int tarif = Integer.parseInt(view.getTarifLok());
-            if (db.cekDuplikatIdWisata(id)){
-                view.showMessage("ID sudah terpakai", "Error", 0);
-            } else {
-                db.addWisata(new Wisata(id, namaTempat, lokasi, deskripsi, tarif));
-                view.showMessage("Wisata sudah ditambah", "Success", 1);
-                loadTabelWisata();
+            try 
+            {
+                int tarif = Integer.parseInt(view.getTarifLok());
+                if (db.cekDuplikatIdWisata(id)){
+                    view.showMessage("ID sudah terpakai", "Error", 0);
+                } else {
+                    db.addWisata(new Wisata(id, namaTempat, lokasi, deskripsi, tarif));
+                    view.showMessage("Wisata sudah ditambah", "Success", 1);
+                    view.resetLokasi();
+                    loadTabelWisata();
+                } 
             }
+            catch (NumberFormatException e)
+            {
+                view.showMessage("Tarif harus berupa angka", "Error", 0);
+            }
+            
         } else if (view.getLokasi() == "nonWisata"){
             if (db.cekDuplikatIdNonWisata(id)){
                 view.showMessage("ID sudah terpakai", "Error", 0);
@@ -100,9 +109,13 @@ public class AdminController extends MouseAdapter implements ActionListener {
     }
     
     public void btnHapusAdminActionPerformed(){
-        db.delAdmin(adm.getUser());
-        loadTabelAdmin();
-        view.showMessage("Data Berhasil Dihapus", "Success", 1);
+        if (adm.getUser().equals("admin")){
+            view.showMessage("Admin tidak boleh dihapus", "Error", 0);
+        } else {
+            db.delAdmin(adm.getUser());
+            loadTabelAdmin();
+            view.showMessage("Data Berhasil Dihapus", "Success", 1);
+        }
     }
     
     public void btnHapusUserActionPerformed(){

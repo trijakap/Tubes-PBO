@@ -94,7 +94,7 @@
         <Component class="javax.swing.JButton" name="lokasiBtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="66" red="66" type="rgb"/>
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="lokasiBtn"/>
           </Properties>
@@ -105,7 +105,7 @@
         <Component class="javax.swing.JButton" name="transportBtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="66" red="66" type="rgb"/>
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="transportBtn"/>
           </Properties>
@@ -116,7 +116,7 @@
         <Component class="javax.swing.JButton" name="userBtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="66" red="66" type="rgb"/>
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Admin &amp; User"/>
           </Properties>
@@ -175,6 +175,7 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                                       <Component id="tarifLok" min="-2" pref="134" max="-2" attributes="0"/>
+                                      <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="0" pref="122" max="32767" attributes="0"/>
                               </Group>
@@ -192,8 +193,8 @@
                               <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" attributes="0">
                                   <Component id="namaTempatField" min="-2" pref="30" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
@@ -206,35 +207,35 @@
                                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="idField" min="-2" pref="32" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="pilihLokBox" min="-2" pref="44" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="btnSubmit" min="-2" pref="55" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jScrollPane2" min="-2" pref="172" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                                  <Component id="tarifLok" min="-2" pref="34" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="jScrollPane2" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="66" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="pilihLokBox" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                              <Component id="tarifLok" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="btnSubmit" min="-2" pref="55" max="-2" attributes="0"/>
+                          <EmptySpace pref="37" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JTextField" name="namaTempatField">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Nama Tempat"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="wisRBtn">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="butGroupJenis"/>
                     </Property>
+                    <Property name="selected" type="boolean" value="true"/>
                     <Property name="text" type="java.lang.String" value="Wisata"/>
                   </Properties>
                   <Events>
@@ -253,9 +254,6 @@
                   </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="idField">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="ID Baru"/>
-                  </Properties>
                 </Component>
                 <Container class="javax.swing.JScrollPane" name="jScrollPane2">
                   <AuxValues>
@@ -272,10 +270,10 @@
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
-                        <StringItem index="0" value="Tega Lega"/>
-                        <StringItem index="1" value="Buah Batu"/>
-                        <StringItem index="2" value="Dago"/>
-                        <StringItem index="3" value="Asia Afrika"/>
+                        <StringItem index="0" value="Bandung Kota"/>
+                        <StringItem index="1" value="Bandung Barat"/>
+                        <StringItem index="2" value="Bandung Utara"/>
+                        <StringItem index="3" value="Bandung Selatan"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -312,9 +310,6 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tarifLok">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Tarif"/>
-                  </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tarifLokActionPerformed"/>
                   </Events>
@@ -322,6 +317,11 @@
                 <Component class="javax.swing.JButton" name="btnSubmit">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Submit"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel24">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Tarif:"/>
                   </Properties>
                 </Component>
               </SubComponents>

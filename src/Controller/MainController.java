@@ -69,7 +69,7 @@ public class MainController extends MouseAdapter implements ActionListener {
                 view.showMessage("Username sudah terpakai", "Error", 0);
             } else {
                 db.addMember(new Member(username,pass,nama,email,noHP));
-                view.setRegEmail(null);
+                view.showMessage("Data berhasil terisi", "Success", 1);
             }
         }
     }
