@@ -5,18 +5,38 @@
  */
 package View;
 
+import Model.NonWisata;
+import Model.Wisata;
+import javax.swing.JTextArea;
+
 /**
  *
  * @author Tri Jaka
  */
 public class InfoLokasi extends javax.swing.JFrame {
 
-    /**
-     * Creates new form InfoLokasi
-     */
-    public InfoLokasi() {
+    Wisata wis;
+    NonWisata nowis;
+    String jenis;
+    public InfoLokasi(String jenis, Wisata wis, NonWisata nowis) {
         initComponents();
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        System.out.println(jenis);
+        if (jenis =="Wisata"){
+            this.wis = wis;
+            setjTextArea1("Nama Tempat      : "+wis.getNama()+'\n'+
+                          "Jenis Tempat     : "+jenis+'\n'+
+                          "Lokasi Tempat    : "+wis.getAlamat()+'\n'+
+                          "Tarif Tempat     : "+wis.getHarga()+'\n'+
+                          "Deskripsi Tempat : "+wis.getDeskripsi());
+        } else if (jenis == "NonWisata") {
+            this.nowis = nowis;
+            setjTextArea1("Nama Tempat      : "+nowis.getNama()+'\n'+
+                          "Jenis Tempat     : "+jenis+'\n'+
+                          "Lokasi Tempat    : "+nowis.getAlamat()+'\n'+
+                          "Deskripsi Tempat : "+nowis.getDeskripsi());
+        }
+        this.jenis = jenis;
     }
 
     /**
@@ -56,4 +76,15 @@ public class InfoLokasi extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
+
+    public JTextArea getjTextArea1() {
+        return jTextArea1;
+    }
+
+    public void setjTextArea1(String info) {
+        this.jTextArea1.setText(info);
+    }
+
+    
+    
 }

@@ -45,7 +45,7 @@ public class MemberFrame extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(102, 102, 102));
         jPanel1.setForeground(new java.awt.Color(102, 102, 102));
 
-        goBtn.setBackground(new java.awt.Color(102, 102, 102));
+        goBtn.setBackground(new java.awt.Color(204, 204, 204));
         goBtn.setText("Pergi ke Tempat Wisata");
         goBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -53,7 +53,7 @@ public class MemberFrame extends javax.swing.JFrame {
             }
         });
 
-        infoLokBtn.setBackground(new java.awt.Color(102, 102, 102));
+        infoLokBtn.setBackground(new java.awt.Color(204, 204, 204));
         infoLokBtn.setText("Info Lokasi");
         infoLokBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -18,6 +18,7 @@ public class MemberController extends MouseAdapter implements ActionListener{
         this.db = db;
         view = new MemberFrame();
         view.addActionListener(this);
+        view.addMouseAdapter(this);
         view.setVisible(true);
         view.setLocationRelativeTo(null);
         loadTabelLokasi("Bandung Kota");
@@ -44,8 +45,8 @@ public class MemberController extends MouseAdapter implements ActionListener{
         loadTabelLokasi(view.getcBoxInfoLokasi());
     }
     
-    public void btnInfoLokActionPerformer(){
-        InfoLokasi viewInfoLokasi = new InfoLokasi();
+    public void btnInfoLokActionPerformer(){        
+        InfoLokasi viewInfoLokasi = new InfoLokasi(jenis,wis,nowis);
         viewInfoLokasi.setVisible(true);
         viewInfoLokasi.setLocationRelativeTo(null);
     }
@@ -57,25 +58,35 @@ public class MemberController extends MouseAdapter implements ActionListener{
             btnSetLokasiActionPerformer();
         } else if (source.equals(view.getBtnInfoLokasi())){
             btnInfoLokActionPerformer();
-            System.out.println("wakwaw");
         } else if (source.equals(view.getGoGoBtn())){
             
         }
     }
     
-    Wisata wis;
-    NonWisata nowis;
+    private Wisata wis;
+    private NonWisata nowis;
+    private String jenis;
     
     @Override
     public void mousePressed(MouseEvent me){
         Object source = me.getSource();
-        String jenis;
         if(source.equals(view.getTbLokasi())){
-            int i = view.getSelectedLokasi();
-            wis = new Wisata(view.getTbLokasi().getModel().getValueAt(i, 1).toString());         
-            jenis = view.getTbLokasi().getModel().getValueAt(i, 1).toString();
-            if (jenis == "NonWisata"){
-                nowis = new NonWisata(wis.getId());
+            int i = view.getSelectedLokasi();         
+            jenis = view.getTbLokasi().getModel().getValueAt(i, 2).toString();
+            if (jenis == "Wisata"){
+            ArrayList<Wisata> wisata = db.getWisata();
+            for (Wisata w : wisata){
+                if(w.getId().equals(view.getTbLokasi().getModel().getValueAt(i, 1).toString())){
+                    wis = w;
+                }
+            }
+            } else {
+                ArrayList<NonWisata> nonWisata = db.getNonWisata();
+                for (NonWisata w : nonWisata){
+                    if(w.getId().equals(view.getTbLokasi().getModel().getValueAt(i, 1).toString())){
+                        nowis = w;
+                    }
+                }
             }
         }
     }
