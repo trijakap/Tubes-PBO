@@ -219,6 +219,8 @@ public class AdminFrame extends javax.swing.JFrame {
 
         jScrollPane2.setViewportView(descPane);
 
+        pilihLokBox.setBackground(new java.awt.Color(102, 102, 102));
+        pilihLokBox.setForeground(new java.awt.Color(255, 255, 255));
         pilihLokBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bandung Kota", "Bandung Barat", "Bandung Utara", "Bandung Selatan" }));
 
         jLabel1.setText("Nama Tempat: ");
@@ -314,6 +316,8 @@ public class AdminFrame extends javax.swing.JFrame {
 
         jLabel5.setText("Pilih Non-Wisata:");
 
+        btnHapusNonWisata.setBackground(new java.awt.Color(102, 102, 102));
+        btnHapusNonWisata.setForeground(new java.awt.Color(255, 255, 255));
         btnHapusNonWisata.setText("Hapus");
 
         tbWisata.setModel(new javax.swing.table.DefaultTableModel(
@@ -344,6 +348,8 @@ public class AdminFrame extends javax.swing.JFrame {
 
         jLabel17.setText("Pilih Wisata:");
 
+        btnHapusWisata.setBackground(new java.awt.Color(102, 102, 102));
+        btnHapusWisata.setForeground(new java.awt.Color(255, 255, 255));
         btnHapusWisata.setText("Hapus");
 
         javax.swing.GroupLayout hapusLokPanelLayout = new javax.swing.GroupLayout(hapusLokPanel);
@@ -380,7 +386,7 @@ public class AdminFrame extends javax.swing.JFrame {
                 .addGroup(hapusLokPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnHapusWisata, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(hapusLokPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -455,10 +461,16 @@ public class AdminFrame extends javax.swing.JFrame {
 
         jLabel25.setText("Rute:");
 
+        cBoxLokasi.setBackground(new java.awt.Color(102, 102, 102));
+        cBoxLokasi.setForeground(new java.awt.Color(255, 255, 255));
         cBoxLokasi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bandung Kota", "Bandung Utara", "Bandung Barat", "Bandung Selatan" }));
 
+        btnTambahRute.setBackground(new java.awt.Color(102, 102, 102));
+        btnTambahRute.setForeground(new java.awt.Color(255, 255, 255));
         btnTambahRute.setText("tambah");
 
+        btnHapusRute.setBackground(new java.awt.Color(102, 102, 102));
+        btnHapusRute.setForeground(new java.awt.Color(255, 255, 255));
         btnHapusRute.setText("hapus");
 
         javax.swing.GroupLayout tambahTransPanelLayout = new javax.swing.GroupLayout(tambahTransPanel);

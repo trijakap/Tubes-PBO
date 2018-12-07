@@ -94,16 +94,27 @@ public class MemberFrame extends javax.swing.JFrame {
 
         jPanel2.setLayout(new java.awt.CardLayout());
 
+        cBoxLokasiAsal.setBackground(new java.awt.Color(102, 102, 102));
+        cBoxLokasiAsal.setForeground(new java.awt.Color(255, 255, 255));
         cBoxLokasiAsal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bandung Kota", "Bandung Utara", "Bandung Barat", "Bandung Selatan", "", "" }));
 
+        cBoxLokasiTujuan.setBackground(new java.awt.Color(102, 102, 102));
+        cBoxLokasiTujuan.setForeground(new java.awt.Color(255, 255, 255));
         cBoxLokasiTujuan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bandung Kota", "Bandung Utara", "Bandung Barat", "Bandung Selatan" }));
 
+        cBoxWisata.setBackground(new java.awt.Color(102, 102, 102));
+        cBoxWisata.setForeground(new java.awt.Color(255, 255, 255));
+
+        cBoxTransport.setBackground(new java.awt.Color(102, 102, 102));
+        cBoxTransport.setForeground(new java.awt.Color(255, 255, 255));
         cBoxTransport.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Angkot", "Bus" }));
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
+        btnGo.setBackground(new java.awt.Color(102, 102, 102));
+        btnGo.setForeground(new java.awt.Color(255, 255, 255));
         btnGo.setText("Go");
 
         jLabel1.setText("Lokasi Asal:");
@@ -179,8 +190,12 @@ public class MemberFrame extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tbLokasi);
 
+        cBoxInfoLokasi.setBackground(new java.awt.Color(102, 102, 102));
+        cBoxInfoLokasi.setForeground(new java.awt.Color(255, 255, 255));
         cBoxInfoLokasi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bandung Kota", "Bandung Utara", "Bandung Barat", "Bandung Selatan" }));
 
+        btnInfoLokasi.setBackground(new java.awt.Color(102, 102, 102));
+        btnInfoLokasi.setForeground(new java.awt.Color(255, 255, 255));
         btnInfoLokasi.setText("Show Info");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
