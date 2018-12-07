@@ -39,6 +39,7 @@ public class Database {
         loadNonWisata();
         loadAngkot();
         loadBus();
+        loadRute();
     }
     
     public int getKodeAngkot(){

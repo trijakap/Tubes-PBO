@@ -142,7 +142,7 @@ public class AdminFrame extends javax.swing.JFrame {
         jPanel2.setPreferredSize(new java.awt.Dimension(335, 200));
 
         lokasiBtn.setBackground(new java.awt.Color(204, 204, 204));
-        lokasiBtn.setText("lokasiBtn");
+        lokasiBtn.setText("Edit Lokasi");
         lokasiBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lokasiBtnActionPerformed(evt);
@@ -150,7 +150,7 @@ public class AdminFrame extends javax.swing.JFrame {
         });
 
         transportBtn.setBackground(new java.awt.Color(204, 204, 204));
-        transportBtn.setText("transportBtn");
+        transportBtn.setText("Edit Transport");
         transportBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 transportBtnActionPerformed(evt);
@@ -158,7 +158,7 @@ public class AdminFrame extends javax.swing.JFrame {
         });
 
         userBtn.setBackground(new java.awt.Color(204, 204, 204));
-        userBtn.setText("Admin & User");
+        userBtn.setText("Edit Admin & User");
         userBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userBtnActionPerformed(evt);

@@ -381,10 +381,9 @@ public class MemberFrame extends javax.swing.JFrame {
         return jTextArea1;
     }
 
-    public void setjTextArea1(String infoAngkot, String infoBus) {
+    public void setjTextArea1(String info) {
         jTextArea1.removeAll();
-        jTextArea1.setText("Angkot yang sesuai dengan lokasi:"+infoAngkot+'\n'+
-                           "Bus yang sesuai dengan lokasi:"+infoBus+'\n');
+        jTextArea1.setText(info);
     }
     
     

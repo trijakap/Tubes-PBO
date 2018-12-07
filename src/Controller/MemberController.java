@@ -69,7 +69,59 @@ public class MemberController extends MouseAdapter implements ActionListener{
     }
     
     public void goGoBtnActionPerformed(){
-        
+        ArrayList<Rute> rute = db.getRute();
+        ArrayList<Angkot> angkot = db.getAngkot();
+        ArrayList<Bus> bus = db.getBus();
+        boolean found = false;
+        boolean found1 = false;
+        String info = "";
+        Angkot a;
+        Bus b;
+        if (view.getcBoxTransport() == "Angkot"){
+            info = "Angkot yang sesuai dengan lokasi:" + '\n';
+            for (Angkot ang : angkot){
+                found1 = false;
+                for (Rute r : rute){
+                    if (ang.getNopol().equals(r.getNoPolisi())){
+                        if (r.getLokasi().equals(view.getcBoxLokasiAsal())){
+                            for (Rute s : rute){
+                                if (!found1){
+                                    if (s.getLokasi().equals(view.getcBoxLokasiTujuan()) && r.getNoPolisi().equals(s.getNoPolisi())){
+                                        info += "Kode Angkot: "+ang.getKode()+" , Tarif: "+ang.getTarif()+'\n';
+                                        found = true;
+                                        found1 = true;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } else if (view.getcBoxTransport() == "Bus"){
+            info = "Bus yang sesuai dengan lokasi:" + '\n';
+            for (Bus bu : bus){
+                found1 = false;
+                for (Rute r : rute){
+                    if (bu.getNopol().equals(r.getNoPolisi())){
+                        if (r.getLokasi().equals(view.getcBoxLokasiAsal())){
+                            for (Rute s : rute){
+                                if (!found1){
+                                    if (s.getLokasi().equals(view.getcBoxLokasiTujuan()) && r.getNoPolisi().equals(s.getNoPolisi())){
+                                        info += "Nama Bus: "+bu.getNama()+" , Tarif: "+bu.getTarif()+'\n';
+                                        found = true;
+                                        found1 = true;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if (!found){
+            info += "Tidak ditemukan";
+        }
+        view.setjTextArea1(info);
     }
 
     @Override

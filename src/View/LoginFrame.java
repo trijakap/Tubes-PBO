@@ -66,6 +66,8 @@ public class LoginFrame extends javax.swing.JFrame {
         passLab.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         passLab.setText("Password:");
 
+        loginUser.setBackground(new java.awt.Color(102, 102, 102));
+        loginUser.setForeground(new java.awt.Color(255, 255, 255));
         loginUser.setText("Login as User");
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -82,6 +84,8 @@ public class LoginFrame extends javax.swing.JFrame {
             }
         });
 
+        loginAdmin.setBackground(new java.awt.Color(102, 102, 102));
+        loginAdmin.setForeground(new java.awt.Color(255, 255, 255));
         loginAdmin.setText("Login as Admin");
 
         javax.swing.GroupLayout loginPanelLayout = new javax.swing.GroupLayout(loginPanel);
@@ -164,6 +168,8 @@ public class LoginFrame extends javax.swing.JFrame {
             }
         });
 
+        regBtn.setBackground(new java.awt.Color(102, 102, 102));
+        regBtn.setForeground(new java.awt.Color(255, 255, 255));
         regBtn.setText("Click Here to Register");
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -178,16 +184,15 @@ public class LoginFrame extends javax.swing.JFrame {
                 .addGroup(registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(noHPReg)
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
-                    .addGroup(registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(regNama)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(regEmail)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(regUsername)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(regPassword)
-                        .addComponent(regBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE))
+                    .addComponent(regNama, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(regEmail, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(regUsername, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(regPassword, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(regBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 163, Short.MAX_VALUE)
                     .addGroup(registerPanelLayout.createSequentialGroup()
                         .addComponent(backLogin)
                         .addGap(30, 30, 30)))
