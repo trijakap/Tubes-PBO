@@ -2,8 +2,8 @@
 -- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 30, 2018 at 10:54 PM
+-- Host: localhost
+-- Generation Time: Dec 07, 2018 at 01:43 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -57,14 +57,6 @@ CREATE TABLE `angkot` (
   `kode` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `angkot`
---
-
-INSERT INTO `angkot` (`no_pol`, `tarif`, `kapasitas`, `kode`) VALUES
-('D13027BTZ', 5000, 10, 1),
-('D13102BSJD', 5000, 10, 2);
-
 -- --------------------------------------------------------
 
 --
@@ -77,13 +69,6 @@ CREATE TABLE `bus` (
   `kapasitas` int(11) DEFAULT NULL,
   `nama` varchar(40) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `bus`
---
-
-INSERT INTO `bus` (`no_pol`, `tarif`, `kapasitas`, `nama`) VALUES
-('D13027BTZ', 5000, 10, 'majalengka');
 
 -- --------------------------------------------------------
 
@@ -104,10 +89,7 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`username`, `password`, `nama`, `email`, `no_hp`) VALUES
-('jaka', 'jaka', 'jaka', 'jaka', '123123123123'),
-('jaka', 'jaka', 'jaka', 'jaka', '123123123123'),
-('mantap', 'mantap', 'mantap', 'mantap', '081322291482'),
-('a', 'a', 'a', 'a', 'a');
+('jaka', 'jaka', 'jak', 'jaka', '0813291');
 
 -- --------------------------------------------------------
 
@@ -127,8 +109,14 @@ CREATE TABLE `non-wisata` (
 --
 
 INSERT INTO `non-wisata` (`id`, `nama`, `alamat`, `deskripsi`) VALUES
-('1', 'mantap', 'Tega Lega', 'mantap'),
-('Tempat', 'mantap', 'Tega Lega', 'mantap');
+('001', 'Non Wisata BK 1', 'Bandung Kota', 'mantap'),
+('002', 'Non Wisata BK 2', 'Bandung Kota', 'mantap'),
+('003', 'Non Wisata BB 1', 'Bandung Barat', 'mantap'),
+('004', 'Non Wisata BB 2', 'Bandung Barat', 'mantap'),
+('005', 'Non Wisata BU 1', 'Bandung Utara', 'mantap'),
+('006', 'Non Wisata BU 2', 'Bandung Utara', 'mantap'),
+('007', 'Non Wisata BS 1', 'Bandung Selatan', 'mantap'),
+('008', 'Non Wisata BS 2', 'Bandung Selatan', 'mantap');
 
 -- --------------------------------------------------------
 
@@ -141,6 +129,17 @@ CREATE TABLE `nonwisata` (
   `nama` varchar(20) NOT NULL,
   `alamat` varchar(70) NOT NULL,
   `deskripsi` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rute`
+--
+
+CREATE TABLE `rute` (
+  `noPolisi` varchar(20) NOT NULL,
+  `lokasi` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -162,8 +161,15 @@ CREATE TABLE `wisata` (
 --
 
 INSERT INTO `wisata` (`id`, `nama`, `alamat`, `deskripsi`, `harga_tiket`) VALUES
-('1', 'Nama Tempat', 'Tega Lega', '', 130000),
-('Tempat', 'mantap', 'Tega Lega', 'mantap', 130000);
+('001', 'Wisata BK 1', 'Bandung Kota', 'mantap', 30000),
+('002', 'Wisata BK 2', 'Bandung Kota', 'mantap', 20000),
+('003', 'Wisata BB 1', 'Bandung Barat', 'mantap', 20000),
+('004', 'Wisata BB 2', 'Bandung Barat', 'mantap', 40000),
+('005', 'Wisata BU 1', 'Bandung Utara', 'mantap', 50000),
+('006', 'Wisata BU 2', 'Bandung Utara', 'mantap', 10000),
+('007', 'Wisata BS 1', 'Bandung Selatan', 'mantap', 10000),
+('008', 'Wisata BS 2', 'Bandung Selatan', 'mantap', 20000),
+('009', 'a', 'Bandung Kota', 'a', 130000);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
