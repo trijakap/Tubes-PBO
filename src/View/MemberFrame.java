@@ -38,7 +38,6 @@ public class MemberFrame extends javax.swing.JFrame {
         tbLokasi = new javax.swing.JTable();
         cBoxInfoLokasi = new javax.swing.JComboBox<>();
         btnInfoLokasi = new javax.swing.JButton();
-        btnSetLokasi = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,7 +85,7 @@ public class MemberFrame extends javax.swing.JFrame {
 
         cBoxLokasiAsal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bandung Kota", "Bandung Utara", "Bandung Barat", "Bandung Selatan", "", "" }));
 
-        cBoxLokasiTujuan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bandung Kota", "Bandung Utara", "Bandung Barat", "Bandung Selatan", "", "" }));
+        cBoxLokasiTujuan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bandung Kota", "Bandung Utara", "Bandung Barat", "Bandung Selatan" }));
 
         cBoxTransport.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Angkot", "Bus" }));
 
@@ -173,8 +172,6 @@ public class MemberFrame extends javax.swing.JFrame {
 
         btnInfoLokasi.setText("Show Info");
 
-        btnSetLokasi.setText(">>");
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -182,15 +179,13 @@ public class MemberFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(cBoxInfoLokasi, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
-                .addComponent(btnSetLokasi)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(146, 146, 146)
                 .addComponent(btnInfoLokasi, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(168, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -202,9 +197,7 @@ public class MemberFrame extends javax.swing.JFrame {
                         .addGap(12, 12, 12))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(93, 93, 93)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cBoxInfoLokasi, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnSetLokasi, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(cBoxInfoLokasi, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(btnInfoLokasi, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -249,7 +242,6 @@ public class MemberFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGo;
     private javax.swing.JButton btnInfoLokasi;
-    private javax.swing.JButton btnSetLokasi;
     private javax.swing.JComboBox<String> cBoxInfoLokasi;
     private javax.swing.JComboBox<String> cBoxLokasiAsal;
     private javax.swing.JComboBox<String> cBoxLokasiTujuan;
@@ -270,13 +262,6 @@ public class MemberFrame extends javax.swing.JFrame {
     private javax.swing.JTable tbLokasi;
     // End of variables declaration//GEN-END:variables
 
-    public JButton getBtnSetLokasi() {
-        return btnSetLokasi;
-    }
-
-    public void setBtnSetLokasi(JButton btnSetLokasi) {
-        this.btnSetLokasi = btnSetLokasi;
-    }
 
     public String getcBoxLokasiAsal() {
         return cBoxLokasiAsal.getItemAt(cBoxLokasiAsal.getSelectedIndex());
@@ -288,6 +273,10 @@ public class MemberFrame extends javax.swing.JFrame {
 
     public String getcBoxLokasiTujuan() {
         return cBoxLokasiTujuan.getItemAt(cBoxLokasiTujuan.getSelectedIndex());
+    }
+    
+    public JComboBox getcBoxLokasiTujuanID(){
+        return cBoxLokasiTujuan;
     }
 
     public void setcBoxLokasiTujuan(JComboBox<String> cBoxLokasiTujuan) {
@@ -306,8 +295,12 @@ public class MemberFrame extends javax.swing.JFrame {
         return cBoxWisata.getItemAt(cBoxWisata.getSelectedIndex());
     }
 
-    public void setcBoxWisata(JComboBox<String> cBoxWisata) {
-        this.cBoxWisata = cBoxWisata;
+    public void setcBoxWisata(String wisata) {
+        this.cBoxWisata.addItem(wisata);
+    }
+    
+    public void delCBoxWisata(){
+        this.cBoxWisata.removeAllItems();
     }
 
     public JButton getGoGoBtn() {
@@ -333,13 +326,21 @@ public class MemberFrame extends javax.swing.JFrame {
     public void setTbLokasi(DefaultTableModel x) {
         this.tbLokasi.setModel(x);
     }
+    
+    
 
     public void setCBoxLokasiTujuan (String lokasi){
         this.cBoxLokasiTujuan.addItem(lokasi);
     }
+    
+    
 
     public String getcBoxInfoLokasi() {
         return cBoxInfoLokasi.getItemAt(cBoxInfoLokasi.getSelectedIndex());
+    }
+    
+    public JComboBox getCBoxInfoLokasiID(){
+        return cBoxInfoLokasi;
     }
 
     public JButton getBtnInfoLokasi() {
@@ -354,14 +355,18 @@ public class MemberFrame extends javax.swing.JFrame {
         return tbLokasi.getSelectedRow();
     }
     
+    
     public void addActionListener(ActionListener x){
-        btnSetLokasi.addActionListener(x);
+        
         btnInfoLokasi.addActionListener(x);
         btnGo.addActionListener(x);
+        cBoxLokasiTujuan.addActionListener(x);
+        cBoxInfoLokasi.addActionListener(x);
     }
     
     public void addMouseAdapter(MouseAdapter x){
         tbLokasi.addMouseListener(x);
+        
     }
     
 }

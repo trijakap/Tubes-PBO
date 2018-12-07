@@ -22,20 +22,21 @@ public class MemberController extends MouseAdapter implements ActionListener{
         view.setVisible(true);
         view.setLocationRelativeTo(null);
         loadTabelLokasi("Bandung Kota");
+        this.cBoxLokasiTujuanActionPerformed();
     }
     
     public void loadTabelLokasi(String lokasi){
-        DefaultTableModel model = new DefaultTableModel(new String[]{"Nama Tempat","id","Jenis Objek"},0);
+        DefaultTableModel model = new DefaultTableModel(new String[]{"Nama Tempat","Jenis Objek"},0);
         ArrayList<Wisata> wisata = db.getWisata();
         ArrayList<NonWisata> nonWisata = db.getNonWisata();
         for (NonWisata w : nonWisata){
             if(w.alamat.equals(lokasi)){
-                model.addRow(new Object[]{w.getNama(),w.getId(),"NonWisata"});   
+                model.addRow(new Object[]{w.getNama(),"NonWisata"});   
             }
         }
         for (Wisata w : wisata){
             if(w.alamat.equals(lokasi)){
-                model.addRow(new Object[]{w.getNama(),w.getId(),"Wisata"});   
+                model.addRow(new Object[]{w.getNama(),"Wisata"});   
             }
         }
         view.setTbLokasi(model);
@@ -50,16 +51,34 @@ public class MemberController extends MouseAdapter implements ActionListener{
         viewInfoLokasi.setVisible(true);
         viewInfoLokasi.setLocationRelativeTo(null);
     }
+    
+    public void cBoxLokasiTujuanActionPerformed(){
+        view.delCBoxWisata();
+        ArrayList<Wisata> wisata = db.getWisata();
+        ArrayList<NonWisata> nonWisata = db.getNonWisata();
+        for (NonWisata w : nonWisata){
+            if (w.alamat.equals(view.getcBoxLokasiTujuan())){
+                view.setcBoxWisata(w.nama);
+            }
+        }
+        for (Wisata w : wisata){
+            if (w.alamat.equals(view.getcBoxLokasiTujuan())){
+                view.setcBoxWisata(w.nama);
+            }
+        }
+    }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
         Object source = ae.getSource();
-        if (source.equals(view.getBtnSetLokasi())){
+        if (source.equals(view.getCBoxInfoLokasiID())){
             btnSetLokasiActionPerformer();
         } else if (source.equals(view.getBtnInfoLokasi())){
             btnInfoLokActionPerformer();
         } else if (source.equals(view.getGoGoBtn())){
             
+        } else if (source.equals(view.getcBoxLokasiTujuanID())){
+            cBoxLokasiTujuanActionPerformed();
         }
     }
     
