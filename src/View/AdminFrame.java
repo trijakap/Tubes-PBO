@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
@@ -46,6 +47,7 @@ public class AdminFrame extends javax.swing.JFrame {
         lokasiBtn = new javax.swing.JButton();
         transportBtn = new javax.swing.JButton();
         userBtn = new javax.swing.JButton();
+        btnLogOut = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         lokTabPane = new javax.swing.JTabbedPane();
         tambahLokPanel = new javax.swing.JPanel();
@@ -87,6 +89,8 @@ public class AdminFrame extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         fieldTarifTrans = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        labelKode = new javax.swing.JLabel();
         hapusTransPanel = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         btnHapusBus = new javax.swing.JButton();
@@ -119,7 +123,6 @@ public class AdminFrame extends javax.swing.JFrame {
         btnHapusUser = new javax.swing.JButton();
         jScrollPane9 = new javax.swing.JScrollPane();
         tbUser = new javax.swing.JTable();
-        jLabel16 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(500, 500));
@@ -156,6 +159,14 @@ public class AdminFrame extends javax.swing.JFrame {
             }
         });
 
+        btnLogOut.setBackground(new java.awt.Color(204, 204, 204));
+        btnLogOut.setText("Log Out");
+        btnLogOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogOutActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -163,11 +174,17 @@ public class AdminFrame extends javax.swing.JFrame {
             .addComponent(lokasiBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(transportBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(userBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnLogOut)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(btnLogOut)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lokasiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(transportBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -179,7 +196,6 @@ public class AdminFrame extends javax.swing.JFrame {
         jPanel3.setLayout(new java.awt.CardLayout());
 
         butGroupJenis.add(wisRBtn);
-        wisRBtn.setSelected(true);
         wisRBtn.setText("Wisata");
         wisRBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -215,6 +231,8 @@ public class AdminFrame extends javax.swing.JFrame {
             }
         });
 
+        btnSubmit.setBackground(java.awt.SystemColor.controlDkShadow);
+        btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
         btnSubmit.setText("Submit");
 
         jLabel24.setText("Tarif:");
@@ -246,7 +264,7 @@ public class AdminFrame extends javax.swing.JFrame {
                             .addComponent(jLabel6)
                             .addComponent(tarifLok, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel24))
-                        .addGap(0, 122, Short.MAX_VALUE)))
+                        .addGap(0, 160, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         tambahLokPanelLayout.setVerticalGroup(
@@ -337,7 +355,7 @@ public class AdminFrame extends javax.swing.JFrame {
                             .addGroup(hapusLokPanelLayout.createSequentialGroup()
                                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 472, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnHapusWisata, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE))
+                                .addComponent(btnHapusWisata, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE))
                             .addGroup(hapusLokPanelLayout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addGap(0, 0, Short.MAX_VALUE))
@@ -376,6 +394,7 @@ public class AdminFrame extends javax.swing.JFrame {
         });
 
         butGroupJenis.add(rBtnTransA);
+        rBtnTransA.setSelected(true);
         rBtnTransA.setText("Angkot");
         rBtnTransA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -385,7 +404,14 @@ public class AdminFrame extends javax.swing.JFrame {
 
         butGroupJenis.add(rBtnTransB);
         rBtnTransB.setText("Bus");
+        rBtnTransB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rBtnTransBActionPerformed(evt);
+            }
+        });
 
+        btnSubmitTrans.setBackground(java.awt.SystemColor.controlDkShadow);
+        btnSubmitTrans.setForeground(new java.awt.Color(255, 255, 255));
         btnSubmitTrans.setText("Submit");
 
         jLabel7.setText("Nama Transportasi:");
@@ -403,6 +429,10 @@ public class AdminFrame extends javax.swing.JFrame {
         jLabel19.setText("Kapasitas:");
 
         jLabel18.setText("Tarif:");
+
+        jLabel16.setText("Kode:");
+
+        labelKode.setText("kode");
 
         javax.swing.GroupLayout tambahTransPanelLayout = new javax.swing.GroupLayout(tambahTransPanel);
         tambahTransPanel.setLayout(tambahTransPanelLayout);
@@ -429,8 +459,12 @@ public class AdminFrame extends javax.swing.JFrame {
                         .addGap(28, 28, 28)
                         .addGroup(tambahTransPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel18)
-                            .addComponent(fieldTarifTrans, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(169, Short.MAX_VALUE))
+                            .addComponent(fieldTarifTrans, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(tambahTransPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel16)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelKode)))))
+                .addContainerGap(207, Short.MAX_VALUE))
         );
         tambahTransPanelLayout.setVerticalGroup(
             tambahTransPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -448,7 +482,9 @@ public class AdminFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tambahTransPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rBtnTransA)
-                    .addComponent(rBtnTransB))
+                    .addComponent(rBtnTransB)
+                    .addComponent(jLabel16)
+                    .addComponent(labelKode))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -466,6 +502,8 @@ public class AdminFrame extends javax.swing.JFrame {
 
         jLabel12.setText("Pilih Angkot:");
 
+        btnHapusBus.setBackground(java.awt.SystemColor.controlDkShadow);
+        btnHapusBus.setForeground(new java.awt.Color(255, 255, 255));
         btnHapusBus.setText("Hapus");
 
         tbBus.setModel(new javax.swing.table.DefaultTableModel(
@@ -496,6 +534,8 @@ public class AdminFrame extends javax.swing.JFrame {
 
         jLabel20.setText("Pilih Bus:");
 
+        btnHapusAngkot.setBackground(java.awt.SystemColor.controlDkShadow);
+        btnHapusAngkot.setForeground(new java.awt.Color(255, 255, 255));
         btnHapusAngkot.setText("Hapus");
 
         javax.swing.GroupLayout hapusTransPanelLayout = new javax.swing.GroupLayout(hapusTransPanel);
@@ -512,10 +552,10 @@ public class AdminFrame extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btnHapusBus, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel20))
-                .addGap(0, 10, Short.MAX_VALUE))
+                .addGap(0, 48, Short.MAX_VALUE))
             .addGroup(hapusTransPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, hapusTransPanelLayout.createSequentialGroup()
-                    .addContainerGap(480, Short.MAX_VALUE)
+                    .addContainerGap(518, Short.MAX_VALUE)
                     .addComponent(btnHapusAngkot, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap()))
         );
@@ -562,8 +602,12 @@ public class AdminFrame extends javax.swing.JFrame {
 
         fieldPassAdmin.setText("password");
 
+        btnTambahAdmin.setBackground(java.awt.SystemColor.controlDkShadow);
+        btnTambahAdmin.setForeground(new java.awt.Color(255, 255, 255));
         btnTambahAdmin.setText("Tambah");
 
+        btnHapusAdmin.setBackground(java.awt.SystemColor.controlDkShadow);
+        btnHapusAdmin.setForeground(new java.awt.Color(255, 255, 255));
         btnHapusAdmin.setText("Hapus");
 
         jLabel14.setText("Hapus Admin");
@@ -635,7 +679,7 @@ public class AdminFrame extends javax.swing.JFrame {
                                     .addComponent(jLabel23))))
                         .addGroup(adminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(adminPanelLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                                 .addComponent(jLabel14)
                                 .addGap(264, 264, 264))
                             .addGroup(adminPanelLayout.createSequentialGroup()
@@ -694,6 +738,8 @@ public class AdminFrame extends javax.swing.JFrame {
 
         jLabel15.setText("List user:");
 
+        btnHapusUser.setBackground(java.awt.SystemColor.controlDkShadow);
+        btnHapusUser.setForeground(new java.awt.Color(255, 255, 255));
         btnHapusUser.setText("Hapus");
 
         tbUser.setModel(new javax.swing.table.DefaultTableModel(
@@ -719,7 +765,7 @@ public class AdminFrame extends javax.swing.JFrame {
                     .addComponent(jLabel15)
                     .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnHapusUser, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(286, Short.MAX_VALUE))
+                .addContainerGap(324, Short.MAX_VALUE))
         );
         userPanelLayout.setVerticalGroup(
             userPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -727,7 +773,7 @@ public class AdminFrame extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addComponent(jLabel15)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(btnHapusUser, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51))
@@ -737,8 +783,6 @@ public class AdminFrame extends javax.swing.JFrame {
 
         jPanel3.add(uATabPane, "card2");
 
-        jLabel16.setText("Pilih Lokasi:");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -746,18 +790,13 @@ public class AdminFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel16)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel16)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(21, 21, 21)
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -773,7 +812,8 @@ public class AdminFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_fieldNamaTransActionPerformed
 
     private void rBtnTransAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rBtnTransAActionPerformed
-        // TODO add your handling code here:
+        jLabel16.setVisible(true);
+        labelKode.setVisible(true);
     }//GEN-LAST:event_rBtnTransAActionPerformed
 
     private void fieldKapasitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldKapasitasActionPerformed
@@ -832,6 +872,16 @@ public class AdminFrame extends javax.swing.JFrame {
     private void fieldNoHPAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldNoHPAdminActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fieldNoHPAdminActionPerformed
+
+    private void btnLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogOutActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLogOutActionPerformed
+
+    private void rBtnTransBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rBtnTransBActionPerformed
+        jLabel16.setVisible(false);
+        labelKode.setVisible(false);
+    }//GEN-LAST:event_rBtnTransBActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel adminPanel;
     private javax.swing.JButton btnHapusAdmin;
@@ -840,6 +890,7 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnHapusNonWisata;
     private javax.swing.JButton btnHapusUser;
     private javax.swing.JButton btnHapusWisata;
+    private javax.swing.JButton btnLogOut;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JButton btnSubmitTrans;
     private javax.swing.JButton btnTambahAdmin;
@@ -890,6 +941,7 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JLabel labelKode;
     private javax.swing.JTabbedPane lokTabPane;
     private javax.swing.JButton lokasiBtn;
     private javax.swing.JTextField namaTempatField;
@@ -1250,8 +1302,22 @@ public class AdminFrame extends javax.swing.JFrame {
     public void setBtnHapusWisata(JButton btnHapusWisata) {
         this.btnHapusWisata = btnHapusWisata;
     }
-    
-    
+
+    public JButton getBtnLogOut() {
+        return btnLogOut;
+    }
+
+    public void setBtnLogOut(JButton btnLogOut) {
+        this.btnLogOut = btnLogOut;
+    }
+
+    public JLabel getLabelKode() {
+        return labelKode;
+    }
+
+    public void setLabelKode(String kode) {
+        labelKode.setText(kode);
+    }
     
     public void addActionListener(ActionListener x){
         btnSubmit.addActionListener(x);
@@ -1263,6 +1329,7 @@ public class AdminFrame extends javax.swing.JFrame {
         btnHapusUser.addActionListener(x);
         btnHapusAngkot.addActionListener(x);
         btnHapusBus.addActionListener(x);
+        btnLogOut.addActionListener(x);
     }   
     
     public void addMouseAdapter(MouseAdapter x){

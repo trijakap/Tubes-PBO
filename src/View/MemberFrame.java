@@ -21,6 +21,7 @@ public class MemberFrame extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         goBtn = new javax.swing.JButton();
         infoLokBtn = new javax.swing.JButton();
+        btnLogOut = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         cBoxLokasiAsal = new javax.swing.JComboBox<>();
@@ -60,18 +61,27 @@ public class MemberFrame extends javax.swing.JFrame {
             }
         });
 
+        btnLogOut.setBackground(new java.awt.Color(204, 204, 204));
+        btnLogOut.setText("Log Out");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(infoLokBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnLogOut)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(goBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(btnLogOut)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(infoLokBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(78, 78, 78))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -223,6 +233,8 @@ public class MemberFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+
     private void goBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goBtnActionPerformed
         // TODO add your handling code here:
         jPanel2.removeAll();
@@ -242,6 +254,7 @@ public class MemberFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGo;
     private javax.swing.JButton btnInfoLokasi;
+    private javax.swing.JButton btnLogOut;
     private javax.swing.JComboBox<String> cBoxInfoLokasi;
     private javax.swing.JComboBox<String> cBoxLokasiAsal;
     private javax.swing.JComboBox<String> cBoxLokasiTujuan;
@@ -355,6 +368,13 @@ public class MemberFrame extends javax.swing.JFrame {
         return tbLokasi.getSelectedRow();
     }
     
+    public JButton getBtnLogOut() {
+        return btnLogOut;
+    }
+
+    public void setBtnLogOut(JButton btnLogOut) {
+        this.btnLogOut = btnLogOut;
+    }
     
     public void addActionListener(ActionListener x){
         
@@ -362,6 +382,7 @@ public class MemberFrame extends javax.swing.JFrame {
         btnGo.addActionListener(x);
         cBoxLokasiTujuan.addActionListener(x);
         cBoxInfoLokasi.addActionListener(x);
+        btnLogOut.addActionListener(x);
     }
     
     public void addMouseAdapter(MouseAdapter x){

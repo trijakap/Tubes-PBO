@@ -79,6 +79,9 @@ public class MemberController extends MouseAdapter implements ActionListener{
             
         } else if (source.equals(view.getcBoxLokasiTujuanID())){
             cBoxLokasiTujuanActionPerformed();
+        } else if (source.equals(view.getBtnLogOut())){
+            view.dispose();
+            new MainController();
         }
     }
     

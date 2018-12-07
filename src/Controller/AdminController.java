@@ -24,7 +24,7 @@ public class AdminController extends MouseAdapter implements ActionListener {
         view = new AdminFrame();
         view.addActionListener(this);
         view.addMouseAdapter(this);
-        view.setVisible(true);
+        view.setVisible(true);view.setLabelKode(Integer.toString(db.getKodeAngkot()));
         view.setLocationRelativeTo(null);
         loadTabelWisata();
         loadTabelNonWisata();
@@ -32,6 +32,7 @@ public class AdminController extends MouseAdapter implements ActionListener {
         loadTabelBus();
         loadTabelAdmin();
         loadTabelMember();
+        view.setLabelKode(Integer.toString(db.getKodeAngkot()));
     }
 
     private void btnSubmitActionPerformed() {
@@ -91,6 +92,7 @@ public class AdminController extends MouseAdapter implements ActionListener {
                 loadTabelBus();
             }
         }
+        view.setLabelKode(Integer.toString(db.getKodeAngkot()));
     }
     
     public void btnTambahAdminActionPerformed(){
@@ -222,6 +224,9 @@ public class AdminController extends MouseAdapter implements ActionListener {
             btnHapusAngkotActionPerformed();
         } else if (source.equals(view.getBtnHapusBus())){
             btnHapusBusActionPerformed();
+        } else if (source.equals(view.getBtnLogOut())){
+            view.dispose();
+            new MainController();
         }
     }
     

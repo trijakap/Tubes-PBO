@@ -36,22 +36,15 @@
           <Group type="102" attributes="0">
               <Component id="jPanel2" min="-2" pref="290" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanel3" max="32767" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
+              <Component id="jPanel3" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel2" pref="401" max="32767" attributes="0"/>
+          <Component id="jPanel2" pref="408" max="32767" attributes="0"/>
           <Group type="102" alignment="0" attributes="0">
-              <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Component id="jPanel3" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -74,11 +67,18 @@
               <Component id="lokasiBtn" alignment="0" max="32767" attributes="0"/>
               <Component id="transportBtn" alignment="0" max="32767" attributes="0"/>
               <Component id="userBtn" alignment="0" pref="290" max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnLogOut" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnLogOut" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="lokasiBtn" min="-2" pref="56" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -122,6 +122,17 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="userBtnActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnLogOut">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Log Out"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLogOutActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
@@ -177,7 +188,7 @@
                                       <Component id="tarifLok" min="-2" pref="134" max="-2" attributes="0"/>
                                       <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="0" pref="122" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="160" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -235,7 +246,6 @@
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="butGroupJenis"/>
                     </Property>
-                    <Property name="selected" type="boolean" value="true"/>
                     <Property name="text" type="java.lang.String" value="Wisata"/>
                   </Properties>
                   <Events>
@@ -316,6 +326,12 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnSubmit">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="4a" green="4a" id="Control Dk Shadow" palette="2" red="4a" type="palette"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Submit"/>
                   </Properties>
                 </Component>
@@ -350,7 +366,7 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jScrollPane6" min="-2" pref="472" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="btnHapusWisata" pref="136" max="32767" attributes="0"/>
+                                          <Component id="btnHapusWisata" pref="172" max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
                                           <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
@@ -503,10 +519,15 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                                       <Component id="fieldTarifTrans" min="-2" pref="217" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="labelKode" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="169" max="32767" attributes="0"/>
+                          <EmptySpace pref="207" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -529,6 +550,8 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="rBtnTransA" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="rBtnTransB" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelKode" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
@@ -556,6 +579,7 @@
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="butGroupJenis"/>
                     </Property>
+                    <Property name="selected" type="boolean" value="true"/>
                     <Property name="text" type="java.lang.String" value="Angkot"/>
                   </Properties>
                   <Events>
@@ -569,11 +593,20 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Bus"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rBtnTransBActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="fieldNoPol">
                 </Component>
                 <Component class="javax.swing.JButton" name="btnSubmitTrans">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="4a" green="4a" id="Control Dk Shadow" palette="2" red="4a" type="palette"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Submit"/>
                   </Properties>
                 </Component>
@@ -609,6 +642,16 @@
                     <Property name="text" type="java.lang.String" value="Tarif:"/>
                   </Properties>
                 </Component>
+                <Component class="javax.swing.JLabel" name="jLabel16">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Kode:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="labelKode">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="kode"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="hapusTransPanel">
@@ -635,11 +678,11 @@
                               </Group>
                               <Component id="jLabel20" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="10" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="48" max="32767" attributes="0"/>
                       </Group>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="480" max="32767" attributes="0"/>
+                              <EmptySpace pref="518" max="32767" attributes="0"/>
                               <Component id="btnHapusAngkot" min="-2" pref="156" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -685,6 +728,12 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnHapusBus">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="4a" green="4a" id="Control Dk Shadow" palette="2" red="4a" type="palette"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Hapus"/>
                   </Properties>
                 </Component>
@@ -737,6 +786,12 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnHapusAngkot">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="4a" green="4a" id="Control Dk Shadow" palette="2" red="4a" type="palette"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Hapus"/>
                   </Properties>
                 </Component>
@@ -797,7 +852,7 @@
                                   </Group>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
-                                          <EmptySpace pref="36" max="32767" attributes="0"/>
+                                          <EmptySpace pref="39" max="32767" attributes="0"/>
                                           <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="264" max="-2" attributes="0"/>
                                       </Group>
@@ -901,11 +956,23 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnTambahAdmin">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="4a" green="4a" id="Control Dk Shadow" palette="2" red="4a" type="palette"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Tambah"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnHapusAdmin">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="4a" green="4a" id="Control Dk Shadow" palette="2" red="4a" type="palette"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Hapus"/>
                   </Properties>
                 </Component>
@@ -986,7 +1053,7 @@
                               <Component id="jScrollPane9" alignment="0" min="-2" pref="350" max="-2" attributes="0"/>
                               <Component id="btnHapusUser" alignment="0" min="-2" pref="172" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="286" max="32767" attributes="0"/>
+                          <EmptySpace pref="324" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -996,7 +1063,7 @@
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane9" pref="185" max="32767" attributes="0"/>
+                          <Component id="jScrollPane9" pref="191" max="32767" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btnHapusUser" min="-2" pref="53" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
@@ -1012,6 +1079,12 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnHapusUser">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="4a" green="4a" id="Control Dk Shadow" palette="2" red="4a" type="palette"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Hapus"/>
                   </Properties>
                 </Component>
@@ -1042,10 +1115,5 @@
         </Container>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="jLabel16">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Pilih Lokasi:"/>
-      </Properties>
-    </Component>
   </SubComponents>
 </Form>
