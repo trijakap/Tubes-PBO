@@ -5,6 +5,7 @@ import java.awt.event.MouseAdapter;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JTable;
+import javax.swing.JTextArea;
 import javax.swing.table.DefaultTableModel;
 
 public class MemberFrame extends javax.swing.JFrame {
@@ -375,6 +376,18 @@ public class MemberFrame extends javax.swing.JFrame {
     public void setBtnLogOut(JButton btnLogOut) {
         this.btnLogOut = btnLogOut;
     }
+
+    public JTextArea getjTextArea1() {
+        return jTextArea1;
+    }
+
+    public void setjTextArea1(String infoAngkot, String infoBus) {
+        jTextArea1.removeAll();
+        jTextArea1.setText("Angkot yang sesuai dengan lokasi:"+infoAngkot+'\n'+
+                           "Bus yang sesuai dengan lokasi:"+infoBus+'\n');
+    }
+    
+    
     
     public void addActionListener(ActionListener x){
         
@@ -387,7 +400,6 @@ public class MemberFrame extends javax.swing.JFrame {
     
     public void addMouseAdapter(MouseAdapter x){
         tbLokasi.addMouseListener(x);
-        
     }
     
 }

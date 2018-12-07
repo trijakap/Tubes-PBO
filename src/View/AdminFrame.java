@@ -91,6 +91,12 @@ public class AdminFrame extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         labelKode = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tbRute = new javax.swing.JTable();
+        jLabel25 = new javax.swing.JLabel();
+        cBoxLokasi = new javax.swing.JComboBox<>();
+        btnTambahRute = new javax.swing.JButton();
+        btnHapusRute = new javax.swing.JButton();
         hapusTransPanel = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         btnHapusBus = new javax.swing.JButton();
@@ -434,6 +440,27 @@ public class AdminFrame extends javax.swing.JFrame {
 
         labelKode.setText("kode");
 
+        tbRute.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(tbRute);
+
+        jLabel25.setText("Rute:");
+
+        cBoxLokasi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bandung Kota", "Bandung Utara", "Bandung Barat", "Bandung Selatan" }));
+
+        btnTambahRute.setText("tambah");
+
+        btnHapusRute.setText("hapus");
+
         javax.swing.GroupLayout tambahTransPanelLayout = new javax.swing.GroupLayout(tambahTransPanel);
         tambahTransPanel.setLayout(tambahTransPanelLayout);
         tambahTransPanelLayout.setHorizontalGroup(
@@ -443,8 +470,6 @@ public class AdminFrame extends javax.swing.JFrame {
                 .addGroup(tambahTransPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8)
                     .addComponent(jLabel9)
-                    .addComponent(jLabel19)
-                    .addComponent(fieldKapasitas, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(tambahTransPanelLayout.createSequentialGroup()
                         .addGroup(tambahTransPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(tambahTransPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -455,7 +480,9 @@ public class AdminFrame extends javax.swing.JFrame {
                                     .addGap(18, 18, 18)
                                     .addComponent(rBtnTransB))
                                 .addComponent(fieldNamaTrans, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE))
-                            .addComponent(jLabel7))
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel19)
+                            .addComponent(fieldKapasitas, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(28, 28, 28)
                         .addGroup(tambahTransPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel18)
@@ -463,8 +490,15 @@ public class AdminFrame extends javax.swing.JFrame {
                             .addGroup(tambahTransPanelLayout.createSequentialGroup()
                                 .addComponent(jLabel16)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(labelKode)))))
-                .addContainerGap(207, Short.MAX_VALUE))
+                                .addComponent(labelKode))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel25)
+                            .addGroup(tambahTransPanelLayout.createSequentialGroup()
+                                .addComponent(cBoxLokasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnTambahRute))
+                            .addComponent(btnHapusRute))))
+                .addContainerGap(143, Short.MAX_VALUE))
         );
         tambahTransPanelLayout.setVerticalGroup(
             tambahTransPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -488,13 +522,25 @@ public class AdminFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(fieldNoPol, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(tambahTransPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(fieldNoPol, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel25))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel19)
+                .addGroup(tambahTransPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(cBoxLokasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnTambahRute))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(fieldKapasitas, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
-                .addComponent(btnSubmitTrans, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
+                .addGroup(tambahTransPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(tambahTransPanelLayout.createSequentialGroup()
+                        .addComponent(fieldKapasitas, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(24, 24, 24)
+                        .addComponent(btnSubmitTrans, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(tambahTransPanelLayout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnHapusRute)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -552,10 +598,10 @@ public class AdminFrame extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btnHapusBus, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel20))
-                .addGap(0, 48, Short.MAX_VALUE))
+                .addGap(0, 23, Short.MAX_VALUE))
             .addGroup(hapusTransPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, hapusTransPanelLayout.createSequentialGroup()
-                    .addContainerGap(518, Short.MAX_VALUE)
+                    .addContainerGap(493, Short.MAX_VALUE)
                     .addComponent(btnHapusAngkot, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap()))
         );
@@ -571,7 +617,7 @@ public class AdminFrame extends javax.swing.JFrame {
                         .addComponent(jLabel12)
                         .addGap(31, 31, 31)
                         .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                         .addComponent(jLabel20)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -580,7 +626,7 @@ public class AdminFrame extends javax.swing.JFrame {
                 .addGroup(hapusTransPanelLayout.createSequentialGroup()
                     .addGap(66, 66, 66)
                     .addComponent(btnHapusAngkot, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(193, Short.MAX_VALUE)))
+                    .addContainerGap(192, Short.MAX_VALUE)))
         );
 
         transTabPane.addTab("Hapus", hapusTransPanel);
@@ -679,7 +725,7 @@ public class AdminFrame extends javax.swing.JFrame {
                                     .addComponent(jLabel23))))
                         .addGroup(adminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(adminPanelLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                                 .addComponent(jLabel14)
                                 .addGap(264, 264, 264))
                             .addGroup(adminPanelLayout.createSequentialGroup()
@@ -888,13 +934,16 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnHapusAngkot;
     private javax.swing.JButton btnHapusBus;
     private javax.swing.JButton btnHapusNonWisata;
+    private javax.swing.JButton btnHapusRute;
     private javax.swing.JButton btnHapusUser;
     private javax.swing.JButton btnHapusWisata;
     private javax.swing.JButton btnLogOut;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JButton btnSubmitTrans;
     private javax.swing.JButton btnTambahAdmin;
+    private javax.swing.JButton btnTambahRute;
     private javax.swing.ButtonGroup butGroupJenis;
+    private javax.swing.JComboBox<String> cBoxLokasi;
     private javax.swing.JTextPane descPane;
     private javax.swing.JTextField fieldEmailAdmin;
     private javax.swing.JTextField fieldKapasitas;
@@ -925,6 +974,7 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -937,6 +987,7 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
@@ -956,6 +1007,7 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JTable tbAngkot;
     private javax.swing.JTable tbBus;
     private javax.swing.JTable tbNonWisata;
+    private javax.swing.JTable tbRute;
     private javax.swing.JTable tbUser;
     private javax.swing.JTable tbWisata;
     private javax.swing.JTabbedPane transTabPane;
@@ -1318,6 +1370,60 @@ public class AdminFrame extends javax.swing.JFrame {
     public void setLabelKode(String kode) {
         labelKode.setText(kode);
     }
+
+    public JButton getBtnHapusRute() {
+        return btnHapusRute;
+    }
+
+    public void setBtnHapusRute(JButton btnHapusRute) {
+        this.btnHapusRute = btnHapusRute;
+    }
+
+    public JButton getBtnTambahRute() {
+        return btnTambahRute;
+    }
+
+    public void setBtnTambahRute(JButton btnTambahRute) {
+        this.btnTambahRute = btnTambahRute;
+    }
+
+    public JTable getTbRute() {
+        return tbRute;
+    }
+    
+    public int getSelectedRute(){
+        return tbRute.getSelectedRow();
+    }
+    
+    public String getIsiTbRute(int i){
+        return tbRute.getModel().getValueAt(i, 0).toString();
+    }
+    
+    public int getRowTbRute(){
+        return tbRute.getRowCount();
+    }
+
+    public void setTbRute(DefaultTableModel x) {
+        tbRute.setModel(x);
+    }
+    
+    public void hapusRowTbRute(int i){
+        ((DefaultTableModel)tbRute.getModel()).removeRow(i);
+    }
+    
+    public void resetTbRute(){
+        tbRute.removeAll();
+    }
+
+    public String getcBoxLokasi() {
+        return cBoxLokasi.getItemAt(cBoxLokasi.getSelectedIndex());
+    }
+
+    public void setcBoxLokasi(JComboBox<String> cBoxLokasi) {
+        this.cBoxLokasi = cBoxLokasi;
+    }
+    
+    
     
     public void addActionListener(ActionListener x){
         btnSubmit.addActionListener(x);
@@ -1330,6 +1436,8 @@ public class AdminFrame extends javax.swing.JFrame {
         btnHapusAngkot.addActionListener(x);
         btnHapusBus.addActionListener(x);
         btnLogOut.addActionListener(x);
+        btnTambahRute.addActionListener(x);
+        btnHapusRute.addActionListener(x);
     }   
     
     public void addMouseAdapter(MouseAdapter x){
@@ -1339,6 +1447,7 @@ public class AdminFrame extends javax.swing.JFrame {
         tbUser.addMouseListener(x);
         tbAngkot.addMouseListener(x);
         tbBus.addMouseListener(x);
+        tbRute.addMouseListener(x);
     }
     
     

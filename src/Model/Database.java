@@ -28,6 +28,7 @@ public class Database {
     private ArrayList<NonWisata> nonWisata = new ArrayList<>();
     private ArrayList<Bus> bus = new ArrayList<>();
     private ArrayList<Angkot> angkot = new ArrayList<>();
+    private ArrayList<Rute> rute = new ArrayList<>();
     
     private int kodeAngkot = 1;
     
@@ -160,6 +161,20 @@ public class Database {
         }
         disconnect();
     }
+    
+    public void loadRute(){
+        connect();
+        try {
+            String query = "SELECT * FROM rute";
+            rs = stmt.executeQuery(query);
+            while (rs.next()){
+                rute.add(new Rute(rs.getString("noPolisi"),rs.getString("lokasi")));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        disconnect();
+    }
 
     public ArrayList<Admin> getAdmin() {
         return admin;
@@ -184,6 +199,12 @@ public class Database {
     public ArrayList<Angkot> getAngkot() {
         return angkot;
     }
+
+    public ArrayList<Rute> getRute() {
+        return rute;
+    }
+    
+    
     
     public void addAdmin(Admin m) {
         connect();
@@ -259,6 +280,16 @@ public class Database {
         query += "'" + m.getNama() + "'";
         query += ")";
         if (manipulate(query)) bus.add(m);
+        disconnect();
+    }
+    
+    public void addRute(String noPol, String lokasi){
+        connect();
+        String query = "INSERT INTO rute VALUES (";
+        query += "'" + noPol + "',";
+        query += "'" + lokasi + "'";
+        query += ")";
+        if (manipulate(query)) rute.add(new Rute(noPol,lokasi));
         disconnect();
     }
     
@@ -439,5 +470,18 @@ public class Database {
         disconnect();
     }
     
+    public void delRute(String noPol){
+        connect();
+        String query = "DELETE FROM rute WHERE noPolisi='" + noPol + "'";
+        if (manipulate(query)){
+            for (Rute m : rute) {
+                if (m.getNoPolisi().equals(noPol)){
+                    rute.remove(m);
+                    break;
+                }
+            }
+        }
+        disconnect();
+    }
     
 }

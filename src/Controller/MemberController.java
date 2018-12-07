@@ -26,17 +26,17 @@ public class MemberController extends MouseAdapter implements ActionListener{
     }
     
     public void loadTabelLokasi(String lokasi){
-        DefaultTableModel model = new DefaultTableModel(new String[]{"Nama Tempat","Jenis Objek"},0);
+        DefaultTableModel model = new DefaultTableModel(new String[]{"Nama Tempat","id","Jenis Objek"},0);
         ArrayList<Wisata> wisata = db.getWisata();
         ArrayList<NonWisata> nonWisata = db.getNonWisata();
         for (NonWisata w : nonWisata){
             if(w.alamat.equals(lokasi)){
-                model.addRow(new Object[]{w.getNama(),"NonWisata"});   
+                model.addRow(new Object[]{w.getNama(),w.getId(),"NonWisata"});   
             }
         }
         for (Wisata w : wisata){
             if(w.alamat.equals(lokasi)){
-                model.addRow(new Object[]{w.getNama(),"Wisata"});   
+                model.addRow(new Object[]{w.getNama(),w.getId(),"Wisata"});   
             }
         }
         view.setTbLokasi(model);
@@ -67,6 +67,10 @@ public class MemberController extends MouseAdapter implements ActionListener{
             }
         }
     }
+    
+    public void goGoBtnActionPerformed(){
+        
+    }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
@@ -76,7 +80,7 @@ public class MemberController extends MouseAdapter implements ActionListener{
         } else if (source.equals(view.getBtnInfoLokasi())){
             btnInfoLokActionPerformer();
         } else if (source.equals(view.getGoGoBtn())){
-            
+            goGoBtnActionPerformed();
         } else if (source.equals(view.getcBoxLokasiTujuanID())){
             cBoxLokasiTujuanActionPerformed();
         } else if (source.equals(view.getBtnLogOut())){

@@ -18,13 +18,15 @@ import javax.swing.table.DefaultTableModel;
 public class AdminController extends MouseAdapter implements ActionListener {
     private Database db;
     private AdminFrame view;
+    private DefaultTableModel modelTbRute = new DefaultTableModel(new String[]{"Nama Lokasi"},0);
+    
     
     public AdminController(Database db){
         this.db = db;
         view = new AdminFrame();
         view.addActionListener(this);
         view.addMouseAdapter(this);
-        view.setVisible(true);view.setLabelKode(Integer.toString(db.getKodeAngkot()));
+        view.setVisible(true);
         view.setLocationRelativeTo(null);
         loadTabelWisata();
         loadTabelNonWisata();
@@ -33,6 +35,7 @@ public class AdminController extends MouseAdapter implements ActionListener {
         loadTabelAdmin();
         loadTabelMember();
         view.setLabelKode(Integer.toString(db.getKodeAngkot()));
+        view.setTbRute(modelTbRute);
     }
 
     private void btnSubmitActionPerformed() {
@@ -70,29 +73,43 @@ public class AdminController extends MouseAdapter implements ActionListener {
     }
     
     public void btnSumbitTransActionPerformed(){
+        try{
         String namaTrans = view.getFieldNamaTrans();
         int kapasitas = view.getFieldKapasitas();
         int tarif = view.getFieldTarifTrans();
         String noPol = view.getFieldNoPol();
         int kodeAngkot = db.getKodeAngkot();
-        if(view.getJenisTrans() == "angkot"){
-            if (db.cekDuplikatNopolAngkot(noPol)){
-                view.showMessage("No. Polisi sudah terpakai", "Error", 0);
+            if(view.getJenisTrans() == "angkot"){
+                if (db.cekDuplikatNopolAngkot(noPol)){
+                    view.showMessage("No. Polisi sudah terpakai", "Error", 0);
+                } else {
+                    db.addAngkot(new Angkot(noPol,tarif,kapasitas,kodeAngkot));
+                    for (int i = 0; i < view.getRowTbRute(); i++){
+                        db.addRute(noPol, view.getIsiTbRute(i));
+                    }
+                    view.showMessage("Angkot sudah ditambah", "Success", 1);
+                    loadTabelAngkot();
+                    
+
+                }
             } else {
-                db.addAngkot(new Angkot(noPol,tarif,kapasitas,kodeAngkot));
-                view.showMessage("Angkot sudah ditambah", "Success", 1);
-                loadTabelAngkot();
+                if (db.cekDuplikatNopolBus(noPol)){
+                    view.showMessage("No. Polisi sudah terpakai", "Error", 0);
+                } else {
+                    db.addBus(new Bus(noPol,tarif,kapasitas,namaTrans));
+                    for (int i = 0; i < view.getRowTbRute(); i++){
+                        db.addRute(noPol, view.getIsiTbRute(i));
+                    }
+                    view.showMessage("Bus sudah ditambah", "Success", 1);
+                    loadTabelBus();
+                }
             }
-        } else {
-            if (db.cekDuplikatNopolBus(noPol)){
-                view.showMessage("No. Polisi sudah terpakai", "Error", 0);
-            } else {
-                db.addBus(new Bus(noPol,tarif,kapasitas,namaTrans));
-                view.showMessage("Bus sudah ditambah", "Success", 1);
-                loadTabelBus();
-            }
+            view.setLabelKode(Integer.toString(db.getKodeAngkot()));
+            
+            
+        } catch (NumberFormatException e){
+            view.showMessage("Tarif & Kapasitas harus berupa angka", "Error", 0);
         }
-        view.setLabelKode(Integer.toString(db.getKodeAngkot()));
     }
     
     public void btnTambahAdminActionPerformed(){
@@ -139,14 +156,33 @@ public class AdminController extends MouseAdapter implements ActionListener {
     
     public void btnHapusAngkotActionPerformed(){
         db.delAngkot(ang.getNopol());
+        db.delRute(ang.getNopol());
         loadTabelAngkot();
         view.showMessage("Data Berhasil Dihapus", "Success", 1);
+        view.setLabelKode(Integer.toString(db.getKodeAngkot()));
     }
     
     public void btnHapusBusActionPerformed(){
         db.delBus(bu.getNopol());
+        db.delRute(bu.getNopol());
         loadTabelBus();
         view.showMessage("Data Berhasil Dihapus", "Success", 1);
+    }
+    
+    public void btnTambahRuteActionPerformed(){
+        boolean check = true;
+        for (int i = 0; i < view.getRowTbRute(); i++){
+            if (view.getcBoxLokasi() == view.getIsiTbRute(i)){
+                check = false;
+            }
+        }
+        if (check){
+            modelTbRute.addRow(new Object[]{view.getcBoxLokasi()});
+        }
+    }
+    
+    public void btnHapusRuteActionPerformed(){
+        view.hapusRowTbRute(a);
     }
     
     public void loadTabelWisata(){
@@ -227,6 +263,10 @@ public class AdminController extends MouseAdapter implements ActionListener {
         } else if (source.equals(view.getBtnLogOut())){
             view.dispose();
             new MainController();
+        } else if (source.equals(view.getBtnTambahRute())){
+            btnTambahRuteActionPerformed();
+        } else if (source.equals(view.getBtnHapusRute())){
+            btnHapusRuteActionPerformed();
         }
     }
     
@@ -236,6 +276,7 @@ public class AdminController extends MouseAdapter implements ActionListener {
     private NonWisata nowis;
     private Angkot ang;
     private Bus bu;
+    int a;
     
     @Override
     public void mousePressed(MouseEvent me){
@@ -258,6 +299,8 @@ public class AdminController extends MouseAdapter implements ActionListener {
         } else if (source.equals(view.getTbBus())){
             int i = view.getSelectedBus();
             bu = new Bus(view.getTbBus().getModel().getValueAt(i, 0).toString());
+        } else if (source.equals(view.getTbRute())){
+            a = view.getSelectedRute();
         }
     }
 }
